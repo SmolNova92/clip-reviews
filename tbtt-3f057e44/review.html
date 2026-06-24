@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TBTT Clip Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #202124;
+      --muted: #666b73;
+      --line: #d9d7d0;
+      --accent: #166a5b;
+      --keep: #0f7b4f;
+      --maybe: #936d13;
+      --reject: #9e2f2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(247, 247, 244, 0.96);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 24px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .source {
+      margin: 4px auto 0;
+      max-width: 1320px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+    .summary {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 18px 24px 42px;
+    }
+    .clip {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.25fr) minmax(320px, 0.75fr);
+      gap: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 0 0 16px;
+    }
+    .videoWrap {
+      background: #111;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .clipHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .score {
+      min-width: 58px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    dl div {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 8px;
+    }
+    dt {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 9px 10px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.active[data-status="keep"] {
+      background: var(--keep);
+      color: white;
+      border-color: var(--keep);
+    }
+    button.active[data-status="maybe"] {
+      background: var(--maybe);
+      color: white;
+      border-color: var(--maybe);
+    }
+    button.active[data-status="reject"] {
+      background: var(--reject);
+      color: white;
+      border-color: var(--reject);
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    textarea {
+      width: 100%;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+    @media (max-width: 860px) {
+      header { position: static; }
+      .topline { align-items: flex-start; flex-direction: column; }
+      .clip { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <h1>TBTT Clip Review</h1>
+      <div class="summary">
+        <span>3 clips</span>
+        <span id="counts">0 keep / 0 maybe / 0 reject</span>
+      </div>
+    </div>
+    <div class="source">Source: D:\Cackle\Raw VODs\TBTT.mp4</div>
+  </header>
+  <main>
+    
+      <article class="clip" data-rank="1">
+        <div class="videoWrap">
+          <video src="01-tbtt-01-04-46.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#01 TBTT</h2>
+            <span class="score">129.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:04:46 - 01:05:16</dd></div>
+            <div><dt>Peak</dt><dd>01:04:58</dd></div>
+            <div><dt>File</dt><dd>01-tbtt-01-04-46.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>sudden jump +25.4 dB, above local baseline +25.0 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 1">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="2">
+        <div class="videoWrap">
+          <video src="02-tbtt-01-38-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#02 TBTT</h2>
+            <span class="score">129.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:38:00 - 01:38:30</dd></div>
+            <div><dt>Peak</dt><dd>01:38:12</dd></div>
+            <div><dt>File</dt><dd>02-tbtt-01-38-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>sudden jump +28.0 dB, above local baseline +22.8 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 2">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="3">
+        <div class="videoWrap">
+          <video src="03-tbtt-00-37-23.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#03 TBTT</h2>
+            <span class="score">127.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:37:23 - 00:37:54</dd></div>
+            <div><dt>Peak</dt><dd>00:37:35</dd></div>
+            <div><dt>File</dt><dd>03-tbtt-00-37-23.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>sudden jump +29.6 dB, above local baseline +21.6 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 3">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+  </main>
+  <script>
+    const stateKey = "clip-review:C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips\\tbtt-3f057e44\\review.html";
+    const state = JSON.parse(localStorage.getItem(stateKey) || "{}");
+
+    function save() {
+      localStorage.setItem(stateKey, JSON.stringify(state));
+      updateCounts();
+    }
+
+    function updateCounts() {
+      const counts = { keep: 0, maybe: 0, reject: 0 };
+      Object.values(state).forEach(item => {
+        if (item.status && counts[item.status] !== undefined) counts[item.status] += 1;
+      });
+      document.getElementById("counts").textContent =
+        `${counts.keep} keep / ${counts.maybe} maybe / ${counts.reject} reject`;
+    }
+
+    document.querySelectorAll(".clip").forEach(card => {
+      const rank = card.dataset.rank;
+      const item = state[rank] || {};
+      const textarea = card.querySelector("textarea");
+      textarea.value = item.notes || "";
+
+      if (item.status) {
+        const active = card.querySelector(`[data-status="${item.status}"]`);
+        if (active) active.classList.add("active");
+      }
+
+      card.querySelectorAll("button[data-status]").forEach(button => {
+        button.addEventListener("click", () => {
+          card.querySelectorAll("button[data-status]").forEach(other => other.classList.remove("active"));
+          button.classList.add("active");
+          state[rank] = state[rank] || {};
+          state[rank].status = button.dataset.status;
+          save();
+        });
+      });
+
+      textarea.addEventListener("input", () => {
+        state[rank] = state[rank] || {};
+        state[rank].notes = textarea.value;
+        save();
+      });
+    });
+
+    updateCounts();
+  </script>
+</body>
+</html>

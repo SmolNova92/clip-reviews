@@ -1,0 +1,44 @@
+{
+  "created_at_utc": "2026-06-24T22:36:35.569678+00:00",
+  "vod_dir": "data\\local_vods\\tbtt-3f057e44",
+  "source_path": "D:\\Cackle\\Raw VODs\\TBTT.mp4",
+  "mode": "reencode",
+  "clips": [
+    {
+      "rank": 1,
+      "title": "TBTT",
+      "source_path": "D:\\Cackle\\Raw VODs\\TBTT.mp4",
+      "output_path": "C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips\\tbtt-3f057e44\\01-tbtt-01-04-46.000.mp4",
+      "start_seconds": 3886.0,
+      "end_seconds": 3916.5,
+      "duration_seconds": 30.5,
+      "peak_seconds": 3898.0,
+      "score": 129.64,
+      "reason": "sudden jump +25.4 dB, above local baseline +25.0 dB, near-clipping peak"
+    },
+    {
+      "rank": 2,
+      "title": "TBTT",
+      "source_path": "D:\\Cackle\\Raw VODs\\TBTT.mp4",
+      "output_path": "C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips\\tbtt-3f057e44\\02-tbtt-01-38-00.000.mp4",
+      "start_seconds": 5880.0,
+      "end_seconds": 5910.5,
+      "duration_seconds": 30.5,
+      "peak_seconds": 5892.0,
+      "score": 129.0,
+      "reason": "sudden jump +28.0 dB, above local baseline +22.8 dB, near-clipping peak"
+    },
+    {
+      "rank": 3,
+      "title": "TBTT",
+      "source_path": "D:\\Cackle\\Raw VODs\\TBTT.mp4",
+      "output_path": "C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips\\tbtt-3f057e44\\03-tbtt-00-37-23.500.mp4",
+      "start_seconds": 2243.5,
+      "end_seconds": 2274.0,
+      "duration_seconds": 30.5,
+      "peak_seconds": 2255.5,
+      "score": 127.68,
+      "reason": "sudden jump +29.6 dB, above local baseline +21.6 dB, near-clipping peak"
+    }
+  ]
+}

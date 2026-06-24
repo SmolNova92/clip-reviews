@@ -1,0 +1,4 @@
+rank,clip_file,vod_title,source_timestamp,end_timestamp,peak_timestamp,score,reason,status,notes
+1,01-tbtt-01-04-46.000.mp4,TBTT,01:04:46,01:05:16,01:04:58,129.64,"sudden jump +25.4 dB, above local baseline +25.0 dB, near-clipping peak",,
+2,02-tbtt-01-38-00.000.mp4,TBTT,01:38:00,01:38:30,01:38:12,129.0,"sudden jump +28.0 dB, above local baseline +22.8 dB, near-clipping peak",,
+3,03-tbtt-00-37-23.500.mp4,TBTT,00:37:23,00:37:54,00:37:35,127.68,"sudden jump +29.6 dB, above local baseline +21.6 dB, near-clipping peak",,
