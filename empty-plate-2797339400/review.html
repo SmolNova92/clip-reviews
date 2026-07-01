@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Empty Plate Clip Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #202124;
+      --muted: #666b73;
+      --line: #d9d7d0;
+      --accent: #166a5b;
+      --keep: #0f7b4f;
+      --maybe: #936d13;
+      --reject: #9e2f2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(247, 247, 244, 0.96);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 24px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .source {
+      margin: 4px auto 0;
+      max-width: 1320px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+    .summary {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 18px 24px 42px;
+    }
+    .clip {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.25fr) minmax(320px, 0.75fr);
+      gap: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 0 0 16px;
+    }
+    .videoWrap {
+      background: #111;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .clipHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .score {
+      min-width: 58px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    dl div {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 8px;
+    }
+    dt {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 9px 10px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.active[data-status="keep"] {
+      background: var(--keep);
+      color: white;
+      border-color: var(--keep);
+    }
+    button.active[data-status="maybe"] {
+      background: var(--maybe);
+      color: white;
+      border-color: var(--maybe);
+    }
+    button.active[data-status="reject"] {
+      background: var(--reject);
+      color: white;
+      border-color: var(--reject);
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    textarea {
+      width: 100%;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+    @media (max-width: 860px) {
+      header { position: static; }
+      .topline { align-items: flex-start; flex-direction: column; }
+      .clip { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <h1>Empty Plate Clip Review</h1>
+      <div>
+        <div class="summary">
+          <span>40 clips</span>
+          <span id="counts">0 keep / 0 maybe / 0 reject</span>
+        </div>
+        <div class="actions">
+          <button type="button" id="exportCsv">Export CSV</button>
+          <button type="button" id="exportJson">Export JSON</button>
+          <button type="button" id="clearReview">Clear Review</button>
+        </div>
+      </div>
+    </div>
+    <div class="source">Source: D:\Cackle\Raw VODs\Empty Plate 2797339400-697386570-4eb6edd6-55e4-4f8d-9e2c-d26e17538b51.mp4</div>
+  </header>
+  <main>
+    
+      <article class="clip" data-rank="1">
+        <div class="videoWrap">
+          <video src="01-empty-plate-00-05-37.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#01 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:05:37 - 00:06:08</dd></div>
+            <div><dt>Peak</dt><dd>00:05:49</dd></div>
+            <div><dt>File</dt><dd>01-empty-plate-00-05-37.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 1">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="2">
+        <div class="videoWrap">
+          <video src="02-empty-plate-00-15-40.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#02 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:15:40 - 00:16:10</dd></div>
+            <div><dt>Peak</dt><dd>00:15:52</dd></div>
+            <div><dt>File</dt><dd>02-empty-plate-00-15-40.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 2">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="3">
+        <div class="videoWrap">
+          <video src="03-empty-plate-00-24-57.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#03 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:24:57 - 00:25:27</dd></div>
+            <div><dt>Peak</dt><dd>00:25:09</dd></div>
+            <div><dt>File</dt><dd>03-empty-plate-00-24-57.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 3">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="4">
+        <div class="videoWrap">
+          <video src="04-empty-plate-00-27-04.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#04 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:27:04 - 00:27:35</dd></div>
+            <div><dt>Peak</dt><dd>00:27:16</dd></div>
+            <div><dt>File</dt><dd>04-empty-plate-00-27-04.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 4">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="5">
+        <div class="videoWrap">
+          <video src="05-empty-plate-00-47-55.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#05 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:47:55 - 00:48:25</dd></div>
+            <div><dt>Peak</dt><dd>00:48:07</dd></div>
+            <div><dt>File</dt><dd>05-empty-plate-00-47-55.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 5">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="6">
+        <div class="videoWrap">
+          <video src="06-empty-plate-00-54-42.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#06 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:54:42 - 00:55:13</dd></div>
+            <div><dt>Peak</dt><dd>00:54:54</dd></div>
+            <div><dt>File</dt><dd>06-empty-plate-00-54-42.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 6">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="7">
+        <div class="videoWrap">
+          <video src="07-empty-plate-01-05-10.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#07 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:05:10 - 01:05:40</dd></div>
+            <div><dt>Peak</dt><dd>01:05:22</dd></div>
+            <div><dt>File</dt><dd>07-empty-plate-01-05-10.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 7">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="8">
+        <div class="videoWrap">
+          <video src="08-empty-plate-01-06-11.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#08 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:06:11 - 01:06:42</dd></div>
+            <div><dt>Peak</dt><dd>01:06:23</dd></div>
+            <div><dt>File</dt><dd>08-empty-plate-01-06-11.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 8">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="9">
+        <div class="videoWrap">
+          <video src="09-empty-plate-01-11-56.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#09 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:11:56 - 01:12:26</dd></div>
+            <div><dt>Peak</dt><dd>01:12:08</dd></div>
+            <div><dt>File</dt><dd>09-empty-plate-01-11-56.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 9">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="10">
+        <div class="videoWrap">
+          <video src="10-empty-plate-01-13-35.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#10 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:13:35 - 01:14:06</dd></div>
+            <div><dt>Peak</dt><dd>01:13:47</dd></div>
+            <div><dt>File</dt><dd>10-empty-plate-01-13-35.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 10">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="11">
+        <div class="videoWrap">
+          <video src="11-empty-plate-01-31-52.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#11 Empty Plate</h2>
+            <span class="score">710.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:31:52 - 01:32:22</dd></div>
+            <div><dt>Peak</dt><dd>01:32:04</dd></div>
+            <div><dt>File</dt><dd>11-empty-plate-01-31-52.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 11">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="12">
+        <div class="videoWrap">
+          <video src="12-empty-plate-00-22-29.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#12 Empty Plate</h2>
+            <span class="score">708.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:22:29 - 00:22:59</dd></div>
+            <div><dt>Peak</dt><dd>00:22:41</dd></div>
+            <div><dt>File</dt><dd>12-empty-plate-00-22-29.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 12">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="13">
+        <div class="videoWrap">
+          <video src="13-empty-plate-00-33-14.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#13 Empty Plate</h2>
+            <span class="score">706.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:33:14 - 00:33:44</dd></div>
+            <div><dt>Peak</dt><dd>00:33:26</dd></div>
+            <div><dt>File</dt><dd>13-empty-plate-00-33-14.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 13">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="14">
+        <div class="videoWrap">
+          <video src="14-empty-plate-00-08-28.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#14 Empty Plate</h2>
+            <span class="score">705.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:08:28 - 00:08:59</dd></div>
+            <div><dt>Peak</dt><dd>00:08:40</dd></div>
+            <div><dt>File</dt><dd>14-empty-plate-00-08-28.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 14">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="15">
+        <div class="videoWrap">
+          <video src="15-empty-plate-00-07-13.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#15 Empty Plate</h2>
+            <span class="score">681.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:07:13 - 00:07:44</dd></div>
+            <div><dt>Peak</dt><dd>00:07:25</dd></div>
+            <div><dt>File</dt><dd>15-empty-plate-00-07-13.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 15">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="16">
+        <div class="videoWrap">
+          <video src="16-empty-plate-01-04-27.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#16 Empty Plate</h2>
+            <span class="score">674.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:04:27 - 01:04:58</dd></div>
+            <div><dt>Peak</dt><dd>01:04:39</dd></div>
+            <div><dt>File</dt><dd>16-empty-plate-01-04-27.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 16">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="17">
+        <div class="videoWrap">
+          <video src="17-empty-plate-01-01-10.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#17 Empty Plate</h2>
+            <span class="score">672.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:01:10 - 01:01:40</dd></div>
+            <div><dt>Peak</dt><dd>01:01:22</dd></div>
+            <div><dt>File</dt><dd>17-empty-plate-01-01-10.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 17">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="18">
+        <div class="videoWrap">
+          <video src="18-empty-plate-00-34-18.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#18 Empty Plate</h2>
+            <span class="score">664.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:34:18 - 00:34:49</dd></div>
+            <div><dt>Peak</dt><dd>00:34:30</dd></div>
+            <div><dt>File</dt><dd>18-empty-plate-00-34-18.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 18">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="19">
+        <div class="videoWrap">
+          <video src="19-empty-plate-01-25-56.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#19 Empty Plate</h2>
+            <span class="score">664.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:25:56 - 01:26:27</dd></div>
+            <div><dt>Peak</dt><dd>01:26:08</dd></div>
+            <div><dt>File</dt><dd>19-empty-plate-01-25-56.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 19">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="20">
+        <div class="videoWrap">
+          <video src="20-empty-plate-00-14-03.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#20 Empty Plate</h2>
+            <span class="score">659.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:14:03 - 00:14:34</dd></div>
+            <div><dt>Peak</dt><dd>00:14:15</dd></div>
+            <div><dt>File</dt><dd>20-empty-plate-00-14-03.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 20">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="21">
+        <div class="videoWrap">
+          <video src="21-empty-plate-00-06-28.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#21 Empty Plate</h2>
+            <span class="score">657.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:06:28 - 00:06:59</dd></div>
+            <div><dt>Peak</dt><dd>00:06:40</dd></div>
+            <div><dt>File</dt><dd>21-empty-plate-00-06-28.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 21">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="22">
+        <div class="videoWrap">
+          <video src="22-empty-plate-01-21-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#22 Empty Plate</h2>
+            <span class="score">345.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:21:30 - 01:22:20</dd></div>
+            <div><dt>Peak</dt><dd>01:21:57</dd></div>
+            <div><dt>File</dt><dd>22-empty-plate-01-21-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +34.1 dB, above local baseline +19.8 dB | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 22">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="23">
+        <div class="videoWrap">
+          <video src="23-empty-plate-00-30-30.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#23 Empty Plate</h2>
+            <span class="score">340.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:30:30 - 00:31:35</dd></div>
+            <div><dt>Peak</dt><dd>00:30:42</dd></div>
+            <div><dt>File</dt><dd>23-empty-plate-00-30-30.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +34.4 dB, above local baseline +18.3 dB, near-clipping peak | chat: chat spike +2 messages, 3 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 23">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="24">
+        <div class="videoWrap">
+          <video src="24-empty-plate-01-17-45.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#24 Empty Plate</h2>
+            <span class="score">340.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:17:45 - 01:18:35</dd></div>
+            <div><dt>Peak</dt><dd>01:18:01</dd></div>
+            <div><dt>File</dt><dd>24-empty-plate-01-17-45.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +28.3 dB, above local baseline +20.7 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 24">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="25">
+        <div class="videoWrap">
+          <video src="25-empty-plate-01-28-57.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#25 Empty Plate</h2>
+            <span class="score">335.4</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:28:57 - 01:29:50</dd></div>
+            <div><dt>Peak</dt><dd>01:29:13</dd></div>
+            <div><dt>File</dt><dd>25-empty-plate-01-28-57.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +29.5 dB, above local baseline +19.5 dB | chat: chat spike +1 messages, 1 reaction keyword(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 25">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="26">
+        <div class="videoWrap">
+          <video src="26-empty-plate-01-01-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#26 Empty Plate</h2>
+            <span class="score">331.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:01:30 - 01:02:44</dd></div>
+            <div><dt>Peak</dt><dd>01:02:26</dd></div>
+            <div><dt>File</dt><dd>26-empty-plate-01-01-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +38.7 dB, above local baseline +16.2 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 26">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="27">
+        <div class="videoWrap">
+          <video src="27-empty-plate-00-44-01.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#27 Empty Plate</h2>
+            <span class="score">325.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:44:01 - 00:45:35</dd></div>
+            <div><dt>Peak</dt><dd>00:44:39</dd></div>
+            <div><dt>File</dt><dd>27-empty-plate-00-44-01.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +20.0 dB, above local baseline +20.9 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 27">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="28">
+        <div class="videoWrap">
+          <video src="28-empty-plate-00-16-54.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#28 Empty Plate</h2>
+            <span class="score">324.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:16:54 - 00:17:57</dd></div>
+            <div><dt>Peak</dt><dd>00:17:38</dd></div>
+            <div><dt>File</dt><dd>28-empty-plate-00-16-54.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +31.1 dB, above local baseline +19.9 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 28">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="29">
+        <div class="videoWrap">
+          <video src="29-empty-plate-00-10-15.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#29 Empty Plate</h2>
+            <span class="score">324.4</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:10:15 - 00:10:58</dd></div>
+            <div><dt>Peak</dt><dd>00:10:40</dd></div>
+            <div><dt>File</dt><dd>29-empty-plate-00-10-15.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +30.8 dB, above local baseline +19.3 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 29">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="30">
+        <div class="videoWrap">
+          <video src="30-empty-plate-01-32-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#30 Empty Plate</h2>
+            <span class="score">322.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:32:15 - 01:33:34</dd></div>
+            <div><dt>Peak</dt><dd>01:32:48</dd></div>
+            <div><dt>File</dt><dd>30-empty-plate-01-32-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +23.2 dB, above local baseline +17.9 dB | chat: chat spike +2 messages | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 30">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="31">
+        <div class="videoWrap">
+          <video src="31-empty-plate-00-40-34.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#31 Empty Plate</h2>
+            <span class="score">318.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:40:34 - 00:41:09</dd></div>
+            <div><dt>Peak</dt><dd>00:40:50</dd></div>
+            <div><dt>File</dt><dd>31-empty-plate-00-40-34.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +30.3 dB, above local baseline +17.4 dB | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 31">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="32">
+        <div class="videoWrap">
+          <video src="32-empty-plate-01-31-08.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#32 Empty Plate</h2>
+            <span class="score">313.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:31:08 - 01:31:39</dd></div>
+            <div><dt>Peak</dt><dd>01:31:20</dd></div>
+            <div><dt>File</dt><dd>32-empty-plate-01-31-08.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +27.4 dB, above local baseline +17.4 dB | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 32">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="33">
+        <div class="videoWrap">
+          <video src="33-empty-plate-01-36-09.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#33 Empty Plate</h2>
+            <span class="score">311.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:36:09 - 01:36:46</dd></div>
+            <div><dt>Peak</dt><dd>01:36:21</dd></div>
+            <div><dt>File</dt><dd>33-empty-plate-01-36-09.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +30.2 dB, above local baseline +15.4 dB | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 33">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="34">
+        <div class="videoWrap">
+          <video src="34-empty-plate-00-18-13.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#34 Empty Plate</h2>
+            <span class="score">310.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:18:13 - 00:18:51</dd></div>
+            <div><dt>Peak</dt><dd>00:18:33</dd></div>
+            <div><dt>File</dt><dd>34-empty-plate-00-18-13.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +28.9 dB, above local baseline +15.3 dB | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 34">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="35">
+        <div class="videoWrap">
+          <video src="35-empty-plate-00-29-29.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#35 Empty Plate</h2>
+            <span class="score">307.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:29:29 - 00:30:33</dd></div>
+            <div><dt>Peak</dt><dd>00:29:41</dd></div>
+            <div><dt>File</dt><dd>35-empty-plate-00-29-29.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +31.2 dB, above local baseline +12.8 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 35">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="36">
+        <div class="videoWrap">
+          <video src="36-empty-plate-00-52-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#36 Empty Plate</h2>
+            <span class="score">120.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:52:00 - 00:53:08</dd></div>
+            <div><dt>Peak</dt><dd>00:52:49</dd></div>
+            <div><dt>File</dt><dd>36-empty-plate-00-52-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +28.3 dB, above local baseline +21.1 dB | chat: chat spike +2 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 36">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="37">
+        <div class="videoWrap">
+          <video src="37-empty-plate-01-15-45.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#37 Empty Plate</h2>
+            <span class="score">119.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:15:45 - 01:16:35</dd></div>
+            <div><dt>Peak</dt><dd>01:16:12</dd></div>
+            <div><dt>File</dt><dd>37-empty-plate-01-15-45.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +30.1 dB, above local baseline +19.6 dB | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 37">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="38">
+        <div class="videoWrap">
+          <video src="38-empty-plate-00-57-34.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#38 Empty Plate</h2>
+            <span class="score">106.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:57:34 - 00:58:35</dd></div>
+            <div><dt>Peak</dt><dd>00:57:46</dd></div>
+            <div><dt>File</dt><dd>38-empty-plate-00-57-34.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +34.6 dB, above local baseline +14.6 dB | chat: chat spike +2 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 38">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="39">
+        <div class="videoWrap">
+          <video src="39-empty-plate-00-12-36.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#39 Empty Plate</h2>
+            <span class="score">103.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:12:36 - 00:13:06</dd></div>
+            <div><dt>Peak</dt><dd>00:12:48</dd></div>
+            <div><dt>File</dt><dd>39-empty-plate-00-12-36.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +29.5 dB, above local baseline +19.5 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 39">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="40">
+        <div class="videoWrap">
+          <video src="40-empty-plate-01-23-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#40 Empty Plate</h2>
+            <span class="score">102.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:23:00 - 01:23:30</dd></div>
+            <div><dt>Peak</dt><dd>01:23:12</dd></div>
+            <div><dt>File</dt><dd>40-empty-plate-01-23-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +36.3 dB, above local baseline +19.8 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 40">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+  </main>
+  <script>
+    const stateKey = "clip-review:C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips-auto\\empty-plate-2797339400\\review.html";
+    const state = JSON.parse(localStorage.getItem(stateKey) || "{}");
+    const clips = [{"rank": 1, "clip_file": "01-empty-plate-00-05-37.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:05:37", "end_timestamp": "00:06:08", "peak_timestamp": "00:05:49", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 2, "clip_file": "02-empty-plate-00-15-40.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:15:40", "end_timestamp": "00:16:10", "peak_timestamp": "00:15:52", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 3, "clip_file": "03-empty-plate-00-24-57.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:24:57", "end_timestamp": "00:25:27", "peak_timestamp": "00:25:09", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 4, "clip_file": "04-empty-plate-00-27-04.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:27:04", "end_timestamp": "00:27:35", "peak_timestamp": "00:27:16", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 5, "clip_file": "05-empty-plate-00-47-55.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:47:55", "end_timestamp": "00:48:25", "peak_timestamp": "00:48:07", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 6, "clip_file": "06-empty-plate-00-54-42.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:54:42", "end_timestamp": "00:55:13", "peak_timestamp": "00:54:54", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 7, "clip_file": "07-empty-plate-01-05-10.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:05:10", "end_timestamp": "01:05:40", "peak_timestamp": "01:05:22", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 8, "clip_file": "08-empty-plate-01-06-11.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:06:11", "end_timestamp": "01:06:42", "peak_timestamp": "01:06:23", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 9, "clip_file": "09-empty-plate-01-11-56.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:11:56", "end_timestamp": "01:12:26", "peak_timestamp": "01:12:08", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 10, "clip_file": "10-empty-plate-01-13-35.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:13:35", "end_timestamp": "01:14:06", "peak_timestamp": "01:13:47", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 11, "clip_file": "11-empty-plate-01-31-52.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:31:52", "end_timestamp": "01:32:22", "peak_timestamp": "01:32:04", "score": 710.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 12, "clip_file": "12-empty-plate-00-22-29.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:22:29", "end_timestamp": "00:22:59", "peak_timestamp": "00:22:41", "score": 708.55, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 13, "clip_file": "13-empty-plate-00-33-14.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:33:14", "end_timestamp": "00:33:44", "peak_timestamp": "00:33:26", "score": 706.1, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 14, "clip_file": "14-empty-plate-00-08-28.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:08:28", "end_timestamp": "00:08:59", "peak_timestamp": "00:08:40", "score": 705.45, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 15, "clip_file": "15-empty-plate-00-07-13.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:07:13", "end_timestamp": "00:07:44", "peak_timestamp": "00:07:25", "score": 681.1, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 16, "clip_file": "16-empty-plate-01-04-27.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:04:27", "end_timestamp": "01:04:58", "peak_timestamp": "01:04:39", "score": 674.5, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 17, "clip_file": "17-empty-plate-01-01-10.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:01:10", "end_timestamp": "01:01:40", "peak_timestamp": "01:01:22", "score": 672.75, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 18, "clip_file": "18-empty-plate-00-34-18.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:34:18", "end_timestamp": "00:34:49", "peak_timestamp": "00:34:30", "score": 664.65, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 19, "clip_file": "19-empty-plate-01-25-56.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:25:56", "end_timestamp": "01:26:27", "peak_timestamp": "01:26:08", "score": 664.65, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 20, "clip_file": "20-empty-plate-00-14-03.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:14:03", "end_timestamp": "00:14:34", "peak_timestamp": "00:14:15", "score": 659.0, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 21, "clip_file": "21-empty-plate-00-06-28.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:06:28", "end_timestamp": "00:06:59", "peak_timestamp": "00:06:40", "score": 657.5, "reason": "visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 22, "clip_file": "22-empty-plate-01-21-30.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:21:30", "end_timestamp": "01:22:20", "peak_timestamp": "01:21:57", "score": 345.26, "reason": "audio: impact or jumpscare candidate, sudden jump +34.1 dB, above local baseline +19.8 dB | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 23, "clip_file": "23-empty-plate-00-30-30.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:30:30", "end_timestamp": "00:31:35", "peak_timestamp": "00:30:42", "score": 340.04, "reason": "audio: impact or jumpscare candidate, sudden jump +34.4 dB, above local baseline +18.3 dB, near-clipping peak | chat: chat spike +2 messages, 3 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 24, "clip_file": "24-empty-plate-01-17-45.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:17:45", "end_timestamp": "01:18:35", "peak_timestamp": "01:18:01", "score": 339.96, "reason": "audio: scream or yelp candidate, sudden jump +28.3 dB, above local baseline +20.7 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 25, "clip_file": "25-empty-plate-01-28-57.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:28:57", "end_timestamp": "01:29:50", "peak_timestamp": "01:29:13", "score": 335.45, "reason": "audio: impact or jumpscare candidate, sudden jump +29.5 dB, above local baseline +19.5 dB | chat: chat spike +1 messages, 1 reaction keyword(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 26, "clip_file": "26-empty-plate-01-01-30.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:01:30", "end_timestamp": "01:02:44", "peak_timestamp": "01:02:26", "score": 331.16, "reason": "audio: sudden noise candidate, sudden jump +38.7 dB, above local baseline +16.2 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 27, "clip_file": "27-empty-plate-00-44-01.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:44:01", "end_timestamp": "00:45:35", "peak_timestamp": "00:44:39", "score": 325.72, "reason": "audio: impact or jumpscare candidate, sudden jump +20.0 dB, above local baseline +20.9 dB | chat: chat spike +2 messages, 2 active chatter(s) | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 28, "clip_file": "28-empty-plate-00-16-54.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:16:54", "end_timestamp": "00:17:57", "peak_timestamp": "00:17:38", "score": 324.91, "reason": "audio: impact or jumpscare candidate, sudden jump +31.1 dB, above local baseline +19.9 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 29, "clip_file": "29-empty-plate-00-10-15.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:10:15", "end_timestamp": "00:10:58", "peak_timestamp": "00:10:40", "score": 324.39, "reason": "audio: impact or jumpscare candidate, sudden jump +30.8 dB, above local baseline +19.3 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 30, "clip_file": "30-empty-plate-01-32-15.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:32:15", "end_timestamp": "01:33:34", "peak_timestamp": "01:32:48", "score": 322.14, "reason": "audio: sudden noise candidate, sudden jump +23.2 dB, above local baseline +17.9 dB | chat: chat spike +2 messages | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 31, "clip_file": "31-empty-plate-00-40-34.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:40:34", "end_timestamp": "00:41:09", "peak_timestamp": "00:40:50", "score": 318.26, "reason": "audio: sudden noise candidate, sudden jump +30.3 dB, above local baseline +17.4 dB | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 32, "clip_file": "32-empty-plate-01-31-08.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:31:08", "end_timestamp": "01:31:39", "peak_timestamp": "01:31:20", "score": 312.99, "reason": "audio: sudden noise candidate, sudden jump +27.4 dB, above local baseline +17.4 dB | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 33, "clip_file": "33-empty-plate-01-36-09.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:36:09", "end_timestamp": "01:36:46", "peak_timestamp": "01:36:21", "score": 311.58, "reason": "audio: sudden noise candidate, sudden jump +30.2 dB, above local baseline +15.4 dB | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 34, "clip_file": "34-empty-plate-00-18-13.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:18:13", "end_timestamp": "00:18:51", "peak_timestamp": "00:18:33", "score": 310.57, "reason": "audio: sudden noise candidate, sudden jump +28.9 dB, above local baseline +15.3 dB | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 35, "clip_file": "35-empty-plate-00-29-29.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:29:29", "end_timestamp": "00:30:33", "peak_timestamp": "00:29:41", "score": 307.81, "reason": "audio: sudden noise candidate, sudden jump +31.2 dB, above local baseline +12.8 dB, near-clipping peak | visual: face position jump, lean/zoom change, webcam motion spike"}, {"rank": 36, "clip_file": "36-empty-plate-00-52-00.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:52:00", "end_timestamp": "00:53:08", "peak_timestamp": "00:52:49", "score": 120.32, "reason": "audio: scream or yelp candidate, sudden jump +28.3 dB, above local baseline +21.1 dB | chat: chat spike +2 messages, 2 active chatter(s)"}, {"rank": 37, "clip_file": "37-empty-plate-01-15-45.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:15:45", "end_timestamp": "01:16:35", "peak_timestamp": "01:16:12", "score": 119.23, "reason": "audio: impact or jumpscare candidate, sudden jump +30.1 dB, above local baseline +19.6 dB | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s)"}, {"rank": 38, "clip_file": "38-empty-plate-00-57-34.500.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:57:34", "end_timestamp": "00:58:35", "peak_timestamp": "00:57:46", "score": 106.61, "reason": "audio: sudden noise candidate, sudden jump +34.6 dB, above local baseline +14.6 dB | chat: chat spike +2 messages, 2 active chatter(s)"}, {"rank": 39, "clip_file": "39-empty-plate-00-12-36.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "00:12:36", "end_timestamp": "00:13:06", "peak_timestamp": "00:12:48", "score": 103.29, "reason": "audio: impact or jumpscare candidate, sudden jump +29.5 dB, above local baseline +19.5 dB, near-clipping peak"}, {"rank": 40, "clip_file": "40-empty-plate-01-23-00.000.mp4", "vod_title": "Empty Plate", "source_timestamp": "01:23:00", "end_timestamp": "01:23:30", "peak_timestamp": "01:23:12", "score": 102.51, "reason": "audio: impact or jumpscare candidate, sudden jump +36.3 dB, above local baseline +19.8 dB"}];
+    const exportBaseName = "empty-plate-review-decisions";
+
+    function save() {
+      localStorage.setItem(stateKey, JSON.stringify(state));
+      updateCounts();
+    }
+
+    function updateCounts() {
+      const counts = { keep: 0, maybe: 0, reject: 0 };
+      Object.values(state).forEach(item => {
+        if (item.status && counts[item.status] !== undefined) counts[item.status] += 1;
+      });
+      document.getElementById("counts").textContent =
+        `${counts.keep} keep / ${counts.maybe} maybe / ${counts.reject} reject`;
+    }
+
+    function rowsForExport() {
+      return clips.map(clip => {
+        const item = state[String(clip.rank)] || {};
+        return {
+          ...clip,
+          status: item.status || "",
+          notes: item.notes || ""
+        };
+      });
+    }
+
+    function downloadBlob(filename, mimeType, content) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function csvEscape(value) {
+      const text = String(value ?? "");
+      if (/[",
+]/.test(text)) return `"${text.replaceAll('"', '""')}"`;
+      return text;
+    }
+
+    function exportCsv() {
+      const rows = rowsForExport();
+      const headers = [
+        "rank", "clip_file", "vod_title", "source_timestamp", "end_timestamp",
+        "peak_timestamp", "score", "reason", "status", "notes"
+      ];
+      const lines = [headers.join(",")];
+      rows.forEach(row => {
+        lines.push(headers.map(header => csvEscape(row[header])).join(","));
+      });
+      downloadBlob(`${exportBaseName}.csv`, "text/csv;charset=utf-8", lines.join("\n"));
+    }
+
+    function exportJson() {
+      const payload = {
+        exported_at: new Date().toISOString(),
+        source: "D:\\Cackle\\Raw VODs\\Empty Plate 2797339400-697386570-4eb6edd6-55e4-4f8d-9e2c-d26e17538b51.mp4",
+        clips: rowsForExport()
+      };
+      downloadBlob(`${exportBaseName}.json`, "application/json;charset=utf-8", JSON.stringify(payload, null, 2));
+    }
+
+    document.querySelectorAll(".clip").forEach(card => {
+      const rank = card.dataset.rank;
+      const item = state[rank] || {};
+      const textarea = card.querySelector("textarea");
+      textarea.value = item.notes || "";
+
+      if (item.status) {
+        const active = card.querySelector(`[data-status="${item.status}"]`);
+        if (active) active.classList.add("active");
+      }
+
+      card.querySelectorAll("button[data-status]").forEach(button => {
+        button.addEventListener("click", () => {
+          card.querySelectorAll("button[data-status]").forEach(other => other.classList.remove("active"));
+          button.classList.add("active");
+          state[rank] = state[rank] || {};
+          state[rank].status = button.dataset.status;
+          save();
+        });
+      });
+
+      textarea.addEventListener("input", () => {
+        state[rank] = state[rank] || {};
+        state[rank].notes = textarea.value;
+        save();
+      });
+    });
+
+    document.getElementById("exportCsv").addEventListener("click", exportCsv);
+    document.getElementById("exportJson").addEventListener("click", exportJson);
+    document.getElementById("clearReview").addEventListener("click", () => {
+      if (!confirm("Clear all review statuses and notes on this page?")) return;
+      Object.keys(state).forEach(key => delete state[key]);
+      localStorage.removeItem(stateKey);
+      document.querySelectorAll("button[data-status]").forEach(button => button.classList.remove("active"));
+      document.querySelectorAll("textarea").forEach(textarea => textarea.value = "");
+      updateCounts();
+    });
+
+    updateCounts();
+  </script>
+</body>
+</html>
