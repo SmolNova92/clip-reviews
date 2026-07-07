@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slackjaw Cherophobia Clip Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #202124;
+      --muted: #666b73;
+      --line: #d9d7d0;
+      --accent: #166a5b;
+      --keep: #0f7b4f;
+      --maybe: #936d13;
+      --reject: #9e2f2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(247, 247, 244, 0.96);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 24px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .source {
+      margin: 4px auto 0;
+      max-width: 1320px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+    .summary {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 18px 24px 42px;
+    }
+    .clip {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.25fr) minmax(320px, 0.75fr);
+      gap: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 0 0 16px;
+    }
+    .videoWrap {
+      background: #111;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .clipHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .score {
+      min-width: 58px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    dl div {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 8px;
+    }
+    dt {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 9px 10px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.active[data-status="keep"] {
+      background: var(--keep);
+      color: white;
+      border-color: var(--keep);
+    }
+    button.active[data-status="maybe"] {
+      background: var(--maybe);
+      color: white;
+      border-color: var(--maybe);
+    }
+    button.active[data-status="reject"] {
+      background: var(--reject);
+      color: white;
+      border-color: var(--reject);
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    textarea {
+      width: 100%;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+    @media (max-width: 860px) {
+      header { position: static; }
+      .topline { align-items: flex-start; flex-direction: column; }
+      .clip { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <h1>Slackjaw Cherophobia Clip Review</h1>
+      <div>
+        <div class="summary">
+          <span>40 clips</span>
+          <span id="counts">0 keep / 0 maybe / 0 reject</span>
+        </div>
+        <div class="actions">
+          <button type="button" id="exportCsv">Export CSV</button>
+          <button type="button" id="exportJson">Export JSON</button>
+          <button type="button" id="clearReview">Clear Review</button>
+        </div>
+      </div>
+    </div>
+    <div class="source">Source: D:\Cackle\Raw VODs\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4</div>
+  </header>
+  <main>
+    
+      <article class="clip" data-rank="1">
+        <div class="videoWrap">
+          <video src="01-slackjaw-cherophobia-00-33-01.290.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#01 Slackjaw Cherophobia</h2>
+            <span class="score">198.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:33:01 - 00:34:50</dd></div>
+            <div><dt>Peak</dt><dd>00:33:44</dd></div>
+            <div><dt>File</dt><dd>01-slackjaw-cherophobia-00-33-01.290.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +34.1 dB, above local baseline +27.3 dB | chat: chat spike +2 messages, 3 active chatter(s) | transcript: fear/surprise phrase, strong reaction phrase (for then? Quit your game for 10 bits. You know what? We are struggling. What the hell / end. I don&#x27;t know what the hell )</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 1">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="2">
+        <div class="videoWrap">
+          <video src="02-slackjaw-cherophobia-01-46-37.450.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#02 Slackjaw Cherophobia</h2>
+            <span class="score">197.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:46:37 - 01:47:53</dd></div>
+            <div><dt>Peak</dt><dd>01:47:35</dd></div>
+            <div><dt>File</dt><dd>02-slackjaw-cherophobia-01-46-37.450.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +33.1 dB, above local baseline +27.3 dB, near-clipping peak | transcript: laugh/funny phrase, clip-worthy phrase + laugh/funny phrase, vocal reaction word (Three minutes in England, fluff to shot. I can&#x27;t believe I&#x27;m playing share of phobia instead of / We&#x27;re just sharing a b)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 2">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="3">
+        <div class="videoWrap">
+          <video src="03-slackjaw-cherophobia-02-17-23.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#03 Slackjaw Cherophobia</h2>
+            <span class="score">197.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:17:23 - 02:18:19</dd></div>
+            <div><dt>Peak</dt><dd>02:17:35</dd></div>
+            <div><dt>File</dt><dd>03-slackjaw-cherophobia-02-17-23.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +40.6 dB, above local baseline +39.5 dB, near-clipping peak | transcript: fear/surprise phrase, strong reaction phrase, short punchy reaction (What the hell?)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 3">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="4">
+        <div class="videoWrap">
+          <video src="04-slackjaw-cherophobia-02-37-06.950.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#04 Slackjaw Cherophobia</h2>
+            <span class="score">188.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:37:06 - 02:37:58</dd></div>
+            <div><dt>Peak</dt><dd>02:37:40</dd></div>
+            <div><dt>File</dt><dd>04-slackjaw-cherophobia-02-37-06.950.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +25.0 dB, above local baseline +30.2 dB, near-clipping peak | transcript: fear/surprise phrase, strong reaction phrase, short punchy reaction + strong reaction phrase, short punchy reaction (What the hell? / The fuck?)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 4">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="5">
+        <div class="videoWrap">
+          <video src="05-slackjaw-cherophobia-02-20-41.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#05 Slackjaw Cherophobia</h2>
+            <span class="score">187.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:20:41 - 02:22:18</dd></div>
+            <div><dt>Peak</dt><dd>02:22:00</dd></div>
+            <div><dt>File</dt><dd>05-slackjaw-cherophobia-02-20-41.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +30.6 dB, above local baseline +31.9 dB | transcript: laugh/funny phrase + fear/surprise phrase, strong reaction phrase + strong reaction phrase, vocal reaction word (I can&#x27;t get it there. / What the hell is that if I chose? / Oh, I forgot how to do all this shit.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 5">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="6">
+        <div class="videoWrap">
+          <video src="06-slackjaw-cherophobia-00-39-59.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#06 Slackjaw Cherophobia</h2>
+            <span class="score">172.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:39:59 - 00:41:05</dd></div>
+            <div><dt>Peak</dt><dd>00:40:11</dd></div>
+            <div><dt>File</dt><dd>06-slackjaw-cherophobia-00-39-59.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +28.6 dB, above local baseline +30.1 dB | chat: chat spike +7 messages, 3 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 6">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="7">
+        <div class="videoWrap">
+          <video src="07-slackjaw-cherophobia-01-44-25.400.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#07 Slackjaw Cherophobia</h2>
+            <span class="score">171.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:44:25 - 01:46:08</dd></div>
+            <div><dt>Peak</dt><dd>01:45:50</dd></div>
+            <div><dt>File</dt><dd>07-slackjaw-cherophobia-01-44-25.400.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +34.7 dB, above local baseline +31.1 dB, near-clipping peak | transcript: laugh/funny phrase + fear/surprise phrase, vocal reaction word (dead young. I can&#x27;t remember how old I was, but like, I was little. And my dad was not in the house. / We&#x27;re gonna have )</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 7">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="8">
+        <div class="videoWrap">
+          <video src="08-slackjaw-cherophobia-01-59-14.380.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#08 Slackjaw Cherophobia</h2>
+            <span class="score">171.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:59:14 - 02:00:05</dd></div>
+            <div><dt>Peak</dt><dd>01:59:28</dd></div>
+            <div><dt>File</dt><dd>08-slackjaw-cherophobia-01-59-14.380.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +31.1 dB, above local baseline +23.3 dB, near-clipping peak | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s) | transcript: laugh/funny phrase, vocal reaction word (Smallwood rather watch, share. Then Harry Kane. Okay. I can&#x27;t move now. Oh, God knows what those)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 8">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="9">
+        <div class="videoWrap">
+          <video src="09-slackjaw-cherophobia-01-48-09.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#09 Slackjaw Cherophobia</h2>
+            <span class="score">167.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:48:09 - 01:49:21</dd></div>
+            <div><dt>Peak</dt><dd>01:48:21</dd></div>
+            <div><dt>File</dt><dd>09-slackjaw-cherophobia-01-48-09.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +35.5 dB, above local baseline +30.1 dB | transcript: laugh/funny phrase, vocal reaction word (Then back here we get pulled by a werewolf. No, I can&#x27;t. All right, back to the house we go,)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 9">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="10">
+        <div class="videoWrap">
+          <video src="10-slackjaw-cherophobia-02-37-57.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#10 Slackjaw Cherophobia</h2>
+            <span class="score">167.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:37:57 - 02:39:20</dd></div>
+            <div><dt>Peak</dt><dd>02:38:09</dd></div>
+            <div><dt>File</dt><dd>10-slackjaw-cherophobia-02-37-57.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +36.1 dB, above local baseline +32.6 dB | transcript: laugh/funny phrase, vocal reaction word + fear/surprise phrase (Oh, I can&#x27;t save it. / Like, nah, I hate this.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 10">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="11">
+        <div class="videoWrap">
+          <video src="11-slackjaw-cherophobia-02-01-13.990.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#11 Slackjaw Cherophobia</h2>
+            <span class="score">165.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:01:13 - 02:03:22</dd></div>
+            <div><dt>Peak</dt><dd>02:01:26</dd></div>
+            <div><dt>File</dt><dd>11-slackjaw-cherophobia-02-01-13.990.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +37.1 dB, above local baseline +27.7 dB, near-clipping peak | transcript: laugh/funny phrase + fear/surprise phrase, vocal reaction word (And the record player thing is gone. I can&#x27;t get it. Why does it eat her open on the ceiling? / The dog was there. She f)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 11">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="12">
+        <div class="videoWrap">
+          <video src="12-slackjaw-cherophobia-02-03-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#12 Slackjaw Cherophobia</h2>
+            <span class="score">165.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:03:30 - 02:04:55</dd></div>
+            <div><dt>Peak</dt><dd>02:04:16</dd></div>
+            <div><dt>File</dt><dd>12-slackjaw-cherophobia-02-03-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +31.5 dB, above local baseline +23.2 dB | chat: chat spike +1 messages, 1 reaction keyword(s) | transcript: fear/surprise phrase, vocal reaction word (But I don&#x27;t think this doctor&#x27;s that nice. Why does it say our IP? Nothing else. Oh my God.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 12">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="13">
+        <div class="videoWrap">
+          <video src="13-slackjaw-cherophobia-00-18-18.380.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#13 Slackjaw Cherophobia</h2>
+            <span class="score">164.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:18:18 - 00:19:25</dd></div>
+            <div><dt>Peak</dt><dd>00:18:40</dd></div>
+            <div><dt>File</dt><dd>13-slackjaw-cherophobia-00-18-18.380.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +31.7 dB, above local baseline +27.9 dB | transcript: fear/surprise phrase, vocal reaction word (kept saying. Oh my god, I don&#x27;t have anything. Just break the window. 8, 8, 2, 1, 7, enter.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 13">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="14">
+        <div class="videoWrap">
+          <video src="14-slackjaw-cherophobia-01-54-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#14 Slackjaw Cherophobia</h2>
+            <span class="score">164.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:54:00 - 01:55:12</dd></div>
+            <div><dt>Peak</dt><dd>01:54:31</dd></div>
+            <div><dt>File</dt><dd>14-slackjaw-cherophobia-01-54-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +44.2 dB, above local baseline +21.9 dB | chat: chat spike +2 messages | transcript: fear/surprise phrase, vocal reaction word (since that, oh my god. Now you know she is option three isn&#x27;t so bad. We&#x27;re not doing option three.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 14">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="15">
+        <div class="videoWrap">
+          <video src="15-slackjaw-cherophobia-01-52-20.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#15 Slackjaw Cherophobia</h2>
+            <span class="score">155.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:52:20 - 01:53:40</dd></div>
+            <div><dt>Peak</dt><dd>01:52:32</dd></div>
+            <div><dt>File</dt><dd>15-slackjaw-cherophobia-01-52-20.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +36.6 dB, above local baseline +23.8 dB | transcript: fear/surprise phrase, vocal reaction word (Just open the door already. You don&#x27;t have time for this. Oh my god, he&#x27;s so fucking rude.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 15">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="16">
+        <div class="videoWrap">
+          <video src="16-slackjaw-cherophobia-02-16-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#16 Slackjaw Cherophobia</h2>
+            <span class="score">146.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:16:30 - 02:17:30</dd></div>
+            <div><dt>Peak</dt><dd>02:17:12</dd></div>
+            <div><dt>File</dt><dd>16-slackjaw-cherophobia-02-16-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +35.5 dB, above local baseline +31.1 dB, near-clipping peak | chat: chat spike +2 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 16">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="17">
+        <div class="videoWrap">
+          <video src="17-slackjaw-cherophobia-02-23-58.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#17 Slackjaw Cherophobia</h2>
+            <span class="score">144.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:23:58 - 02:25:05</dd></div>
+            <div><dt>Peak</dt><dd>02:24:10</dd></div>
+            <div><dt>File</dt><dd>17-slackjaw-cherophobia-02-23-58.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +34.6 dB, above local baseline +31.9 dB | chat: chat spike +2 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 17">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="18">
+        <div class="videoWrap">
+          <video src="18-slackjaw-cherophobia-02-35-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#18 Slackjaw Cherophobia</h2>
+            <span class="score">143.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:35:15 - 02:36:05</dd></div>
+            <div><dt>Peak</dt><dd>02:35:44</dd></div>
+            <div><dt>File</dt><dd>18-slackjaw-cherophobia-02-35-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +31.1 dB, above local baseline +30.4 dB | chat: chat spike +1 messages, 1 reaction keyword(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 18">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="19">
+        <div class="videoWrap">
+          <video src="19-slackjaw-cherophobia-00-42-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#19 Slackjaw Cherophobia</h2>
+            <span class="score">140.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:42:00 - 00:43:04</dd></div>
+            <div><dt>Peak</dt><dd>00:42:46</dd></div>
+            <div><dt>File</dt><dd>19-slackjaw-cherophobia-00-42-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +31.5 dB, above local baseline +27.6 dB, near-clipping peak | chat: chat spike +1 messages, 1 reaction keyword(s), 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 19">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="20">
+        <div class="videoWrap">
+          <video src="20-slackjaw-cherophobia-00-56-27.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#20 Slackjaw Cherophobia</h2>
+            <span class="score">128.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:56:27 - 00:56:57</dd></div>
+            <div><dt>Peak</dt><dd>00:56:39</dd></div>
+            <div><dt>File</dt><dd>20-slackjaw-cherophobia-00-56-27.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +31.4 dB, above local baseline +29.2 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 20">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="21">
+        <div class="videoWrap">
+          <video src="21-slackjaw-cherophobia-02-19-25.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#21 Slackjaw Cherophobia</h2>
+            <span class="score">125.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:19:25 - 02:19:55</dd></div>
+            <div><dt>Peak</dt><dd>02:19:37</dd></div>
+            <div><dt>File</dt><dd>21-slackjaw-cherophobia-02-19-25.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +28.3 dB, above local baseline +33.1 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 21">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="22">
+        <div class="videoWrap">
+          <video src="22-slackjaw-cherophobia-00-55-39.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#22 Slackjaw Cherophobia</h2>
+            <span class="score">123.5</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:55:39 - 00:56:09</dd></div>
+            <div><dt>Peak</dt><dd>00:55:51</dd></div>
+            <div><dt>File</dt><dd>22-slackjaw-cherophobia-00-55-39.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +27.6 dB, above local baseline +28.8 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 22">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="23">
+        <div class="videoWrap">
+          <video src="23-slackjaw-cherophobia-00-39-32.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#23 Slackjaw Cherophobia</h2>
+            <span class="score">121.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:39:32 - 00:40:02</dd></div>
+            <div><dt>Peak</dt><dd>00:39:44</dd></div>
+            <div><dt>File</dt><dd>23-slackjaw-cherophobia-00-39-32.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +25.3 dB, above local baseline +30.5 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 23">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="24">
+        <div class="videoWrap">
+          <video src="24-slackjaw-cherophobia-00-31-52.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#24 Slackjaw Cherophobia</h2>
+            <span class="score">120.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:31:52 - 00:32:23</dd></div>
+            <div><dt>Peak</dt><dd>00:32:04</dd></div>
+            <div><dt>File</dt><dd>24-slackjaw-cherophobia-00-31-52.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +34.2 dB, above local baseline +26.5 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 24">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="25">
+        <div class="videoWrap">
+          <video src="25-slackjaw-cherophobia-01-28-03.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#25 Slackjaw Cherophobia</h2>
+            <span class="score">118.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:28:03 - 01:28:34</dd></div>
+            <div><dt>Peak</dt><dd>01:28:15</dd></div>
+            <div><dt>File</dt><dd>25-slackjaw-cherophobia-01-28-03.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +31.7 dB, above local baseline +26.0 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 25">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="26">
+        <div class="videoWrap">
+          <video src="26-slackjaw-cherophobia-02-28-16.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#26 Slackjaw Cherophobia</h2>
+            <span class="score">115.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:28:16 - 02:28:47</dd></div>
+            <div><dt>Peak</dt><dd>02:28:28</dd></div>
+            <div><dt>File</dt><dd>26-slackjaw-cherophobia-02-28-16.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +37.3 dB, above local baseline +23.7 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 26">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="27">
+        <div class="videoWrap">
+          <video src="27-slackjaw-cherophobia-00-29-01.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#27 Slackjaw Cherophobia</h2>
+            <span class="score">115.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:29:01 - 00:29:32</dd></div>
+            <div><dt>Peak</dt><dd>00:29:13</dd></div>
+            <div><dt>File</dt><dd>27-slackjaw-cherophobia-00-29-01.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +26.5 dB, above local baseline +26.6 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 27">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="28">
+        <div class="videoWrap">
+          <video src="28-slackjaw-cherophobia-02-00-38.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#28 Slackjaw Cherophobia</h2>
+            <span class="score">114.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:00:38 - 02:01:09</dd></div>
+            <div><dt>Peak</dt><dd>02:00:50</dd></div>
+            <div><dt>File</dt><dd>28-slackjaw-cherophobia-02-00-38.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: scream or yelp candidate, sudden jump +25.7 dB, above local baseline +26.4 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 28">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="29">
+        <div class="videoWrap">
+          <video src="29-slackjaw-cherophobia-00-16-46.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#29 Slackjaw Cherophobia</h2>
+            <span class="score">111.4</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:16:46 - 00:17:16</dd></div>
+            <div><dt>Peak</dt><dd>00:16:58</dd></div>
+            <div><dt>File</dt><dd>29-slackjaw-cherophobia-00-16-46.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: impact or jumpscare candidate, sudden jump +29.6 dB, above local baseline +24.0 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 29">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="30">
+        <div class="videoWrap">
+          <video src="30-slackjaw-cherophobia-01-36-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#30 Slackjaw Cherophobia</h2>
+            <span class="score">74.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:36:00 - 01:36:50</dd></div>
+            <div><dt>Peak</dt><dd>01:36:15</dd></div>
+            <div><dt>File</dt><dd>30-slackjaw-cherophobia-01-36-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>chat: chat spike +9 messages, 9 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 30">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="31">
+        <div class="videoWrap">
+          <video src="31-slackjaw-cherophobia-00-45-01.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#31 Slackjaw Cherophobia</h2>
+            <span class="score">74.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:45:01 - 00:46:10</dd></div>
+            <div><dt>Peak</dt><dd>00:45:40</dd></div>
+            <div><dt>File</dt><dd>31-slackjaw-cherophobia-00-45-01.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase + laugh/funny phrase, clip-worthy phrase (And that&#x27;s, that&#x27;s for certain. And a little small. You know what? This is gorgeous. I can&#x27;t, / I can&#x27;t remember if I&#x27;ve)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 31">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="32">
+        <div class="videoWrap">
+          <video src="32-slackjaw-cherophobia-00-48-54.580.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#32 Slackjaw Cherophobia</h2>
+            <span class="score">63.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:48:54 - 00:49:32</dd></div>
+            <div><dt>Peak</dt><dd>00:49:06</dd></div>
+            <div><dt>File</dt><dd>32-slackjaw-cherophobia-00-48-54.580.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, strong reaction phrase, vocal reaction word (Can we get the bra now? No, what the hell am I going to use the marigold for? I&#x27;d be so annoying.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 32">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="33">
+        <div class="videoWrap">
+          <video src="33-slackjaw-cherophobia-01-55-59.720.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#33 Slackjaw Cherophobia</h2>
+            <span class="score">58.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:55:59 - 01:56:48</dd></div>
+            <div><dt>Peak</dt><dd>01:56:11</dd></div>
+            <div><dt>File</dt><dd>33-slackjaw-cherophobia-01-55-59.720.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, strong reaction phrase (an experiment on her. What the fuck? Why is it like the old dialer last time? We&#x27;re trying to find)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 33">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="34">
+        <div class="videoWrap">
+          <video src="34-slackjaw-cherophobia-02-05-17.210.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#34 Slackjaw Cherophobia</h2>
+            <span class="score">58.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:05:17 - 02:06:14</dd></div>
+            <div><dt>Peak</dt><dd>02:05:29</dd></div>
+            <div><dt>File</dt><dd>34-slackjaw-cherophobia-02-05-17.210.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, strong reaction phrase + laugh/funny phrase (especially alone. Am I losing it? What the fuck? Why has she got white walker hair? / I can&#x27;t. She the picture. What&#x27;s h)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 34">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="35">
+        <div class="videoWrap">
+          <video src="35-slackjaw-cherophobia-00-41-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#35 Slackjaw Cherophobia</h2>
+            <span class="score">56.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:41:00 - 00:41:50</dd></div>
+            <div><dt>Peak</dt><dd>00:41:15</dd></div>
+            <div><dt>File</dt><dd>35-slackjaw-cherophobia-00-41-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>chat: chat spike +8 messages, 3 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 35">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="36">
+        <div class="videoWrap">
+          <video src="36-slackjaw-cherophobia-00-46-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#36 Slackjaw Cherophobia</h2>
+            <span class="score">56.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:46:30 - 00:47:20</dd></div>
+            <div><dt>Peak</dt><dd>00:46:45</dd></div>
+            <div><dt>File</dt><dd>36-slackjaw-cherophobia-00-46-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>chat: chat spike +8 messages, 3 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 36">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="37">
+        <div class="videoWrap">
+          <video src="37-slackjaw-cherophobia-00-37-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#37 Slackjaw Cherophobia</h2>
+            <span class="score">50.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:37:15 - 00:38:05</dd></div>
+            <div><dt>Peak</dt><dd>00:37:30</dd></div>
+            <div><dt>File</dt><dd>37-slackjaw-cherophobia-00-37-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>chat: chat spike +7 messages, 3 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 37">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="38">
+        <div class="videoWrap">
+          <video src="38-slackjaw-cherophobia-00-35-30.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#38 Slackjaw Cherophobia</h2>
+            <span class="score">48.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:35:30 - 00:36:20</dd></div>
+            <div><dt>Peak</dt><dd>00:35:45</dd></div>
+            <div><dt>File</dt><dd>38-slackjaw-cherophobia-00-35-30.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>chat: chat spike +7 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 38">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="39">
+        <div class="videoWrap">
+          <video src="39-slackjaw-cherophobia-02-33-10.470.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#39 Slackjaw Cherophobia</h2>
+            <span class="score">47.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>02:33:10 - 02:33:41</dd></div>
+            <div><dt>Peak</dt><dd>02:33:22</dd></div>
+            <div><dt>File</dt><dd>39-slackjaw-cherophobia-02-33-10.470.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: clip-worthy phrase, vocal reaction word (There&#x27;s no way I was out enough then.)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 39">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="40">
+        <div class="videoWrap">
+          <video src="40-slackjaw-cherophobia-01-30-43.140.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#40 Slackjaw Cherophobia</h2>
+            <span class="score">45.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:30:43 - 01:32:24</dd></div>
+            <div><dt>Peak</dt><dd>01:31:35</dd></div>
+            <div><dt>File</dt><dd>40-slackjaw-cherophobia-01-30-43.140.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase + fear/surprise phrase, vocal reaction word (Who is this? Name is Dr. Allodes. My car&#x27;s a wreck. So you better help me fix this mess. / Oh my god yeah absolutely. Th)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 40">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+  </main>
+  <script>
+    const stateKey = "clip-review:C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips-auto\\slackjaw-cherophobia-2809668067\\review.html";
+    const state = JSON.parse(localStorage.getItem(stateKey) || "{}");
+    const clips = [{"rank": 1, "clip_file": "01-slackjaw-cherophobia-00-33-01.290.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:33:01", "end_timestamp": "00:34:50", "peak_timestamp": "00:33:44", "score": 198.62, "reason": "audio: impact or jumpscare candidate, sudden jump +34.1 dB, above local baseline +27.3 dB | chat: chat spike +2 messages, 3 active chatter(s) | transcript: fear/surprise phrase, strong reaction phrase (for then? Quit your game for 10 bits. You know what? We are struggling. What the hell / end. I don't know what the hell )", "source_marker_json": "01-slackjaw-cherophobia-00-33-01.290.source-marker.json"}, {"rank": 2, "clip_file": "02-slackjaw-cherophobia-01-46-37.450.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:46:37", "end_timestamp": "01:47:53", "peak_timestamp": "01:47:35", "score": 197.61, "reason": "audio: scream or yelp candidate, sudden jump +33.1 dB, above local baseline +27.3 dB, near-clipping peak | transcript: laugh/funny phrase, clip-worthy phrase + laugh/funny phrase, vocal reaction word (Three minutes in England, fluff to shot. I can't believe I'm playing share of phobia instead of / We're just sharing a b)", "source_marker_json": "02-slackjaw-cherophobia-01-46-37.450.source-marker.json"}, {"rank": 3, "clip_file": "03-slackjaw-cherophobia-02-17-23.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:17:23", "end_timestamp": "02:18:19", "peak_timestamp": "02:17:35", "score": 197.53, "reason": "audio: scream or yelp candidate, sudden jump +40.6 dB, above local baseline +39.5 dB, near-clipping peak | transcript: fear/surprise phrase, strong reaction phrase, short punchy reaction (What the hell?)", "source_marker_json": "03-slackjaw-cherophobia-02-17-23.000.source-marker.json"}, {"rank": 4, "clip_file": "04-slackjaw-cherophobia-02-37-06.950.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:37:06", "end_timestamp": "02:37:58", "peak_timestamp": "02:37:40", "score": 188.0, "reason": "audio: scream or yelp candidate, sudden jump +25.0 dB, above local baseline +30.2 dB, near-clipping peak | transcript: fear/surprise phrase, strong reaction phrase, short punchy reaction + strong reaction phrase, short punchy reaction (What the hell? / The fuck?)", "source_marker_json": "04-slackjaw-cherophobia-02-37-06.950.source-marker.json"}, {"rank": 5, "clip_file": "05-slackjaw-cherophobia-02-20-41.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:20:41", "end_timestamp": "02:22:18", "peak_timestamp": "02:22:00", "score": 187.66, "reason": "audio: scream or yelp candidate, sudden jump +30.6 dB, above local baseline +31.9 dB | transcript: laugh/funny phrase + fear/surprise phrase, strong reaction phrase + strong reaction phrase, vocal reaction word (I can't get it there. / What the hell is that if I chose? / Oh, I forgot how to do all this shit.)", "source_marker_json": "05-slackjaw-cherophobia-02-20-41.500.source-marker.json"}, {"rank": 6, "clip_file": "06-slackjaw-cherophobia-00-39-59.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:39:59", "end_timestamp": "00:41:05", "peak_timestamp": "00:40:11", "score": 172.83, "reason": "audio: scream or yelp candidate, sudden jump +28.6 dB, above local baseline +30.1 dB | chat: chat spike +7 messages, 3 active chatter(s)", "source_marker_json": "06-slackjaw-cherophobia-00-39-59.500.source-marker.json"}, {"rank": 7, "clip_file": "07-slackjaw-cherophobia-01-44-25.400.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:44:25", "end_timestamp": "01:46:08", "peak_timestamp": "01:45:50", "score": 171.63, "reason": "audio: scream or yelp candidate, sudden jump +34.7 dB, above local baseline +31.1 dB, near-clipping peak | transcript: laugh/funny phrase + fear/surprise phrase, vocal reaction word (dead young. I can't remember how old I was, but like, I was little. And my dad was not in the house. / We're gonna have )", "source_marker_json": "07-slackjaw-cherophobia-01-44-25.400.source-marker.json"}, {"rank": 8, "clip_file": "08-slackjaw-cherophobia-01-59-14.380.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:59:14", "end_timestamp": "02:00:05", "peak_timestamp": "01:59:28", "score": 171.48, "reason": "audio: scream or yelp candidate, sudden jump +31.1 dB, above local baseline +23.3 dB, near-clipping peak | chat: chat spike +2 messages, 1 reaction keyword(s), 2 active chatter(s) | transcript: laugh/funny phrase, vocal reaction word (Smallwood rather watch, share. Then Harry Kane. Okay. I can't move now. Oh, God knows what those)", "source_marker_json": "08-slackjaw-cherophobia-01-59-14.380.source-marker.json"}, {"rank": 9, "clip_file": "09-slackjaw-cherophobia-01-48-09.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:48:09", "end_timestamp": "01:49:21", "peak_timestamp": "01:48:21", "score": 167.26, "reason": "audio: scream or yelp candidate, sudden jump +35.5 dB, above local baseline +30.1 dB | transcript: laugh/funny phrase, vocal reaction word (Then back here we get pulled by a werewolf. No, I can't. All right, back to the house we go,)", "source_marker_json": "09-slackjaw-cherophobia-01-48-09.500.source-marker.json"}, {"rank": 10, "clip_file": "10-slackjaw-cherophobia-02-37-57.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:37:57", "end_timestamp": "02:39:20", "peak_timestamp": "02:38:09", "score": 167.08, "reason": "audio: scream or yelp candidate, sudden jump +36.1 dB, above local baseline +32.6 dB | transcript: laugh/funny phrase, vocal reaction word + fear/surprise phrase (Oh, I can't save it. / Like, nah, I hate this.)", "source_marker_json": "10-slackjaw-cherophobia-02-37-57.000.source-marker.json"}, {"rank": 11, "clip_file": "11-slackjaw-cherophobia-02-01-13.990.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:01:13", "end_timestamp": "02:03:22", "peak_timestamp": "02:01:26", "score": 165.93, "reason": "audio: scream or yelp candidate, sudden jump +37.1 dB, above local baseline +27.7 dB, near-clipping peak | transcript: laugh/funny phrase + fear/surprise phrase, vocal reaction word (And the record player thing is gone. I can't get it. Why does it eat her open on the ceiling? / The dog was there. She f)", "source_marker_json": "11-slackjaw-cherophobia-02-01-13.990.source-marker.json"}, {"rank": 12, "clip_file": "12-slackjaw-cherophobia-02-03-30.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:03:30", "end_timestamp": "02:04:55", "peak_timestamp": "02:04:16", "score": 165.67, "reason": "audio: scream or yelp candidate, sudden jump +31.5 dB, above local baseline +23.2 dB | chat: chat spike +1 messages, 1 reaction keyword(s) | transcript: fear/surprise phrase, vocal reaction word (But I don't think this doctor's that nice. Why does it say our IP? Nothing else. Oh my God.)", "source_marker_json": "12-slackjaw-cherophobia-02-03-30.000.source-marker.json"}, {"rank": 13, "clip_file": "13-slackjaw-cherophobia-00-18-18.380.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:18:18", "end_timestamp": "00:19:25", "peak_timestamp": "00:18:40", "score": 164.94, "reason": "audio: impact or jumpscare candidate, sudden jump +31.7 dB, above local baseline +27.9 dB | transcript: fear/surprise phrase, vocal reaction word (kept saying. Oh my god, I don't have anything. Just break the window. 8, 8, 2, 1, 7, enter.)", "source_marker_json": "13-slackjaw-cherophobia-00-18-18.380.source-marker.json"}, {"rank": 14, "clip_file": "14-slackjaw-cherophobia-01-54-00.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:54:00", "end_timestamp": "01:55:12", "peak_timestamp": "01:54:31", "score": 164.64, "reason": "audio: scream or yelp candidate, sudden jump +44.2 dB, above local baseline +21.9 dB | chat: chat spike +2 messages | transcript: fear/surprise phrase, vocal reaction word (since that, oh my god. Now you know she is option three isn't so bad. We're not doing option three.)", "source_marker_json": "14-slackjaw-cherophobia-01-54-00.000.source-marker.json"}, {"rank": 15, "clip_file": "15-slackjaw-cherophobia-01-52-20.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:52:20", "end_timestamp": "01:53:40", "peak_timestamp": "01:52:32", "score": 155.32, "reason": "audio: scream or yelp candidate, sudden jump +36.6 dB, above local baseline +23.8 dB | transcript: fear/surprise phrase, vocal reaction word (Just open the door already. You don't have time for this. Oh my god, he's so fucking rude.)", "source_marker_json": "15-slackjaw-cherophobia-01-52-20.500.source-marker.json"}, {"rank": 16, "clip_file": "16-slackjaw-cherophobia-02-16-30.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:16:30", "end_timestamp": "02:17:30", "peak_timestamp": "02:17:12", "score": 146.72, "reason": "audio: scream or yelp candidate, sudden jump +35.5 dB, above local baseline +31.1 dB, near-clipping peak | chat: chat spike +2 messages, 2 active chatter(s)", "source_marker_json": "16-slackjaw-cherophobia-02-16-30.000.source-marker.json"}, {"rank": 17, "clip_file": "17-slackjaw-cherophobia-02-23-58.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:23:58", "end_timestamp": "02:25:05", "peak_timestamp": "02:24:10", "score": 144.33, "reason": "audio: impact or jumpscare candidate, sudden jump +34.6 dB, above local baseline +31.9 dB | chat: chat spike +2 messages, 2 active chatter(s)", "source_marker_json": "17-slackjaw-cherophobia-02-23-58.500.source-marker.json"}, {"rank": 18, "clip_file": "18-slackjaw-cherophobia-02-35-15.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:35:15", "end_timestamp": "02:36:05", "peak_timestamp": "02:35:44", "score": 143.07, "reason": "audio: scream or yelp candidate, sudden jump +31.1 dB, above local baseline +30.4 dB | chat: chat spike +1 messages, 1 reaction keyword(s)", "source_marker_json": "18-slackjaw-cherophobia-02-35-15.000.source-marker.json"}, {"rank": 19, "clip_file": "19-slackjaw-cherophobia-00-42-00.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:42:00", "end_timestamp": "00:43:04", "peak_timestamp": "00:42:46", "score": 140.68, "reason": "audio: scream or yelp candidate, sudden jump +31.5 dB, above local baseline +27.6 dB, near-clipping peak | chat: chat spike +1 messages, 1 reaction keyword(s), 2 active chatter(s)", "source_marker_json": "19-slackjaw-cherophobia-00-42-00.000.source-marker.json"}, {"rank": 20, "clip_file": "20-slackjaw-cherophobia-00-56-27.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:56:27", "end_timestamp": "00:56:57", "peak_timestamp": "00:56:39", "score": 128.3, "reason": "audio: scream or yelp candidate, sudden jump +31.4 dB, above local baseline +29.2 dB", "source_marker_json": "20-slackjaw-cherophobia-00-56-27.000.source-marker.json"}, {"rank": 21, "clip_file": "21-slackjaw-cherophobia-02-19-25.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:19:25", "end_timestamp": "02:19:55", "peak_timestamp": "02:19:37", "score": 125.54, "reason": "audio: impact or jumpscare candidate, sudden jump +28.3 dB, above local baseline +33.1 dB", "source_marker_json": "21-slackjaw-cherophobia-02-19-25.000.source-marker.json"}, {"rank": 22, "clip_file": "22-slackjaw-cherophobia-00-55-39.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:55:39", "end_timestamp": "00:56:09", "peak_timestamp": "00:55:51", "score": 123.46, "reason": "audio: scream or yelp candidate, sudden jump +27.6 dB, above local baseline +28.8 dB", "source_marker_json": "22-slackjaw-cherophobia-00-55-39.000.source-marker.json"}, {"rank": 23, "clip_file": "23-slackjaw-cherophobia-00-39-32.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:39:32", "end_timestamp": "00:40:02", "peak_timestamp": "00:39:44", "score": 121.92, "reason": "audio: scream or yelp candidate, sudden jump +25.3 dB, above local baseline +30.5 dB", "source_marker_json": "23-slackjaw-cherophobia-00-39-32.000.source-marker.json"}, {"rank": 24, "clip_file": "24-slackjaw-cherophobia-00-31-52.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:31:52", "end_timestamp": "00:32:23", "peak_timestamp": "00:32:04", "score": 120.94, "reason": "audio: scream or yelp candidate, sudden jump +34.2 dB, above local baseline +26.5 dB", "source_marker_json": "24-slackjaw-cherophobia-00-31-52.500.source-marker.json"}, {"rank": 25, "clip_file": "25-slackjaw-cherophobia-01-28-03.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:28:03", "end_timestamp": "01:28:34", "peak_timestamp": "01:28:15", "score": 118.32, "reason": "audio: impact or jumpscare candidate, sudden jump +31.7 dB, above local baseline +26.0 dB", "source_marker_json": "25-slackjaw-cherophobia-01-28-03.500.source-marker.json"}, {"rank": 26, "clip_file": "26-slackjaw-cherophobia-02-28-16.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:28:16", "end_timestamp": "02:28:47", "peak_timestamp": "02:28:28", "score": 115.68, "reason": "audio: scream or yelp candidate, sudden jump +37.3 dB, above local baseline +23.7 dB, near-clipping peak", "source_marker_json": "26-slackjaw-cherophobia-02-28-16.500.source-marker.json"}, {"rank": 27, "clip_file": "27-slackjaw-cherophobia-00-29-01.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:29:01", "end_timestamp": "00:29:32", "peak_timestamp": "00:29:13", "score": 115.17, "reason": "audio: scream or yelp candidate, sudden jump +26.5 dB, above local baseline +26.6 dB", "source_marker_json": "27-slackjaw-cherophobia-00-29-01.500.source-marker.json"}, {"rank": 28, "clip_file": "28-slackjaw-cherophobia-02-00-38.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:00:38", "end_timestamp": "02:01:09", "peak_timestamp": "02:00:50", "score": 114.14, "reason": "audio: scream or yelp candidate, sudden jump +25.7 dB, above local baseline +26.4 dB, near-clipping peak", "source_marker_json": "28-slackjaw-cherophobia-02-00-38.500.source-marker.json"}, {"rank": 29, "clip_file": "29-slackjaw-cherophobia-00-16-46.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:16:46", "end_timestamp": "00:17:16", "peak_timestamp": "00:16:58", "score": 111.38, "reason": "audio: impact or jumpscare candidate, sudden jump +29.6 dB, above local baseline +24.0 dB", "source_marker_json": "29-slackjaw-cherophobia-00-16-46.000.source-marker.json"}, {"rank": 30, "clip_file": "30-slackjaw-cherophobia-01-36-00.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:36:00", "end_timestamp": "01:36:50", "peak_timestamp": "01:36:15", "score": 74.1, "reason": "chat: chat spike +9 messages, 9 active chatter(s)", "source_marker_json": "30-slackjaw-cherophobia-01-36-00.000.source-marker.json"}, {"rank": 31, "clip_file": "31-slackjaw-cherophobia-00-45-01.500.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:45:01", "end_timestamp": "00:46:10", "peak_timestamp": "00:45:40", "score": 74.0, "reason": "transcript: laugh/funny phrase + laugh/funny phrase, clip-worthy phrase (And that's, that's for certain. And a little small. You know what? This is gorgeous. I can't, / I can't remember if I've)", "source_marker_json": "31-slackjaw-cherophobia-00-45-01.500.source-marker.json"}, {"rank": 32, "clip_file": "32-slackjaw-cherophobia-00-48-54.580.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:48:54", "end_timestamp": "00:49:32", "peak_timestamp": "00:49:06", "score": 63.0, "reason": "transcript: fear/surprise phrase, strong reaction phrase, vocal reaction word (Can we get the bra now? No, what the hell am I going to use the marigold for? I'd be so annoying.)", "source_marker_json": "32-slackjaw-cherophobia-00-48-54.580.source-marker.json"}, {"rank": 33, "clip_file": "33-slackjaw-cherophobia-01-55-59.720.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:55:59", "end_timestamp": "01:56:48", "peak_timestamp": "01:56:11", "score": 58.0, "reason": "transcript: fear/surprise phrase, strong reaction phrase (an experiment on her. What the fuck? Why is it like the old dialer last time? We're trying to find)", "source_marker_json": "33-slackjaw-cherophobia-01-55-59.720.source-marker.json"}, {"rank": 34, "clip_file": "34-slackjaw-cherophobia-02-05-17.210.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:05:17", "end_timestamp": "02:06:14", "peak_timestamp": "02:05:29", "score": 58.0, "reason": "transcript: fear/surprise phrase, strong reaction phrase + laugh/funny phrase (especially alone. Am I losing it? What the fuck? Why has she got white walker hair? / I can't. She the picture. What's h)", "source_marker_json": "34-slackjaw-cherophobia-02-05-17.210.source-marker.json"}, {"rank": 35, "clip_file": "35-slackjaw-cherophobia-00-41-00.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:41:00", "end_timestamp": "00:41:50", "peak_timestamp": "00:41:15", "score": 56.23, "reason": "chat: chat spike +8 messages, 3 active chatter(s)", "source_marker_json": "35-slackjaw-cherophobia-00-41-00.000.source-marker.json"}, {"rank": 36, "clip_file": "36-slackjaw-cherophobia-00-46-30.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:46:30", "end_timestamp": "00:47:20", "peak_timestamp": "00:46:45", "score": 56.23, "reason": "chat: chat spike +8 messages, 3 active chatter(s)", "source_marker_json": "36-slackjaw-cherophobia-00-46-30.000.source-marker.json"}, {"rank": 37, "clip_file": "37-slackjaw-cherophobia-00-37-15.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:37:15", "end_timestamp": "00:38:05", "peak_timestamp": "00:37:30", "score": 50.05, "reason": "chat: chat spike +7 messages, 3 active chatter(s)", "source_marker_json": "37-slackjaw-cherophobia-00-37-15.000.source-marker.json"}, {"rank": 38, "clip_file": "38-slackjaw-cherophobia-00-35-30.000.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "00:35:30", "end_timestamp": "00:36:20", "peak_timestamp": "00:35:45", "score": 48.1, "reason": "chat: chat spike +7 messages, 2 active chatter(s)", "source_marker_json": "38-slackjaw-cherophobia-00-35-30.000.source-marker.json"}, {"rank": 39, "clip_file": "39-slackjaw-cherophobia-02-33-10.470.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "02:33:10", "end_timestamp": "02:33:41", "peak_timestamp": "02:33:22", "score": 47.0, "reason": "transcript: clip-worthy phrase, vocal reaction word (There's no way I was out enough then.)", "source_marker_json": "39-slackjaw-cherophobia-02-33-10.470.source-marker.json"}, {"rank": 40, "clip_file": "40-slackjaw-cherophobia-01-30-43.140.mp4", "vod_title": "Slackjaw Cherophobia", "source_timestamp": "01:30:43", "end_timestamp": "01:32:24", "peak_timestamp": "01:31:35", "score": 45.0, "reason": "transcript: fear/surprise phrase + fear/surprise phrase, vocal reaction word (Who is this? Name is Dr. Allodes. My car's a wreck. So you better help me fix this mess. / Oh my god yeah absolutely. Th)", "source_marker_json": "40-slackjaw-cherophobia-01-30-43.140.source-marker.json"}];
+    const exportBaseName = "slackjaw-cherophobia-review-decisions";
+
+    function save() {
+      localStorage.setItem(stateKey, JSON.stringify(state));
+      updateCounts();
+    }
+
+    function updateCounts() {
+      const counts = { keep: 0, maybe: 0, reject: 0 };
+      Object.values(state).forEach(item => {
+        if (item.status && counts[item.status] !== undefined) counts[item.status] += 1;
+      });
+      document.getElementById("counts").textContent =
+        `${counts.keep} keep / ${counts.maybe} maybe / ${counts.reject} reject`;
+    }
+
+    function rowsForExport() {
+      return clips.map(clip => {
+        const item = state[String(clip.rank)] || {};
+        return {
+          ...clip,
+          status: item.status || "",
+          notes: item.notes || ""
+        };
+      });
+    }
+
+    function downloadBlob(filename, mimeType, content) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function csvEscape(value) {
+      const text = String(value ?? "");
+      if (/[",
+]/.test(text)) return `"${text.replaceAll('"', '""')}"`;
+      return text;
+    }
+
+    function exportCsv() {
+      const rows = rowsForExport();
+      const headers = [
+        "rank", "clip_file", "vod_title", "source_timestamp", "end_timestamp",
+        "peak_timestamp", "score", "reason", "source_marker_json", "status", "notes"
+      ];
+      const lines = [headers.join(",")];
+      rows.forEach(row => {
+        lines.push(headers.map(header => csvEscape(row[header])).join(","));
+      });
+      downloadBlob(`${exportBaseName}.csv`, "text/csv;charset=utf-8", lines.join("\n"));
+    }
+
+    function exportJson() {
+      const payload = {
+        exported_at: new Date().toISOString(),
+        source: "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+        clips: rowsForExport()
+      };
+      downloadBlob(`${exportBaseName}.json`, "application/json;charset=utf-8", JSON.stringify(payload, null, 2));
+    }
+
+    document.querySelectorAll(".clip").forEach(card => {
+      const rank = card.dataset.rank;
+      const item = state[rank] || {};
+      const textarea = card.querySelector("textarea");
+      textarea.value = item.notes || "";
+
+      if (item.status) {
+        const active = card.querySelector(`[data-status="${item.status}"]`);
+        if (active) active.classList.add("active");
+      }
+
+      card.querySelectorAll("button[data-status]").forEach(button => {
+        button.addEventListener("click", () => {
+          card.querySelectorAll("button[data-status]").forEach(other => other.classList.remove("active"));
+          button.classList.add("active");
+          state[rank] = state[rank] || {};
+          state[rank].status = button.dataset.status;
+          save();
+        });
+      });
+
+      textarea.addEventListener("input", () => {
+        state[rank] = state[rank] || {};
+        state[rank].notes = textarea.value;
+        save();
+      });
+    });
+
+    document.getElementById("exportCsv").addEventListener("click", exportCsv);
+    document.getElementById("exportJson").addEventListener("click", exportJson);
+    document.getElementById("clearReview").addEventListener("click", () => {
+      if (!confirm("Clear all review statuses and notes on this page?")) return;
+      Object.keys(state).forEach(key => delete state[key]);
+      localStorage.removeItem(stateKey);
+      document.querySelectorAll("button[data-status]").forEach(button => button.classList.remove("active"));
+      document.querySelectorAll("textarea").forEach(textarea => textarea.value = "");
+      updateCounts();
+    });
+
+    updateCounts();
+  </script>
+</body>
+</html>

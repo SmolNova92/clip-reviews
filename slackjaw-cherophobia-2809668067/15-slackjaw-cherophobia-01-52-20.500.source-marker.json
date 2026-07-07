@@ -1,0 +1,14 @@
+{
+  "rank": 15,
+  "title": "Slackjaw Cherophobia",
+  "clip_file": "15-slackjaw-cherophobia-01-52-20.500.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+  "source_start_seconds": 6740.5,
+  "source_end_seconds": 6820.9,
+  "source_peak_seconds": 6752.5,
+  "source_start_timestamp": "01:52:20",
+  "source_end_timestamp": "01:53:40",
+  "source_peak_timestamp": "01:52:32",
+  "score": 155.32,
+  "reason": "audio: scream or yelp candidate, sudden jump +36.6 dB, above local baseline +23.8 dB | transcript: fear/surprise phrase, vocal reaction word (Just open the door already. You don't have time for this. Oh my god, he's so fucking rude.)"
+}

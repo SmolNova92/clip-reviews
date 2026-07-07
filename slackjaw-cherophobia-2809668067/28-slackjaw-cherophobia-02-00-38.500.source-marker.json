@@ -1,0 +1,14 @@
+{
+  "rank": 28,
+  "title": "Slackjaw Cherophobia",
+  "clip_file": "28-slackjaw-cherophobia-02-00-38.500.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+  "source_start_seconds": 7238.5,
+  "source_end_seconds": 7269.0,
+  "source_peak_seconds": 7250.5,
+  "source_start_timestamp": "02:00:38",
+  "source_end_timestamp": "02:01:09",
+  "source_peak_timestamp": "02:00:50",
+  "score": 114.14,
+  "reason": "audio: scream or yelp candidate, sudden jump +25.7 dB, above local baseline +26.4 dB, near-clipping peak"
+}

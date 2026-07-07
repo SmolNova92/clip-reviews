@@ -1,0 +1,14 @@
+{
+  "rank": 12,
+  "title": "Slackjaw Cherophobia",
+  "clip_file": "12-slackjaw-cherophobia-02-03-30.000.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+  "source_start_seconds": 7410.0,
+  "source_end_seconds": 7495.13,
+  "source_peak_seconds": 7456.5,
+  "source_start_timestamp": "02:03:30",
+  "source_end_timestamp": "02:04:55",
+  "source_peak_timestamp": "02:04:16",
+  "score": 165.67,
+  "reason": "audio: scream or yelp candidate, sudden jump +31.5 dB, above local baseline +23.2 dB | chat: chat spike +1 messages, 1 reaction keyword(s) | transcript: fear/surprise phrase, vocal reaction word (But I don't think this doctor's that nice. Why does it say our IP? Nothing else. Oh my God.)"
+}

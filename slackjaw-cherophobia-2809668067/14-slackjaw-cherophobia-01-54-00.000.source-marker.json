@@ -1,0 +1,14 @@
+{
+  "rank": 14,
+  "title": "Slackjaw Cherophobia",
+  "clip_file": "14-slackjaw-cherophobia-01-54-00.000.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+  "source_start_seconds": 6840.0,
+  "source_end_seconds": 6912.98,
+  "source_peak_seconds": 6871.0,
+  "source_start_timestamp": "01:54:00",
+  "source_end_timestamp": "01:55:12",
+  "source_peak_timestamp": "01:54:31",
+  "score": 164.64,
+  "reason": "audio: scream or yelp candidate, sudden jump +44.2 dB, above local baseline +21.9 dB | chat: chat spike +2 messages | transcript: fear/surprise phrase, vocal reaction word (since that, oh my god. Now you know she is option three isn't so bad. We're not doing option three.)"
+}

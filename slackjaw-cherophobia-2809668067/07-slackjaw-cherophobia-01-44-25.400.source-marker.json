@@ -1,0 +1,14 @@
+{
+  "rank": 7,
+  "title": "Slackjaw Cherophobia",
+  "clip_file": "07-slackjaw-cherophobia-01-44-25.400.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\Slackjaw Cherophobia 2809668067-697386570-645a56eb-f951-410d-8a27-ff2939b1d51c.mp4",
+  "source_start_seconds": 6265.4,
+  "source_end_seconds": 6368.5,
+  "source_peak_seconds": 6350.0,
+  "source_start_timestamp": "01:44:25",
+  "source_end_timestamp": "01:46:08",
+  "source_peak_timestamp": "01:45:50",
+  "score": 171.63,
+  "reason": "audio: scream or yelp candidate, sudden jump +34.7 dB, above local baseline +31.1 dB, near-clipping peak | transcript: laugh/funny phrase + fear/surprise phrase, vocal reaction word (dead young. I can't remember how old I was, but like, I was little. And my dad was not in the house. / We're gonna have )"
+}
