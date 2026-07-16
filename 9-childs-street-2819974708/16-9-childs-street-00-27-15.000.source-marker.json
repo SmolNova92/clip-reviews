@@ -1,0 +1,14 @@
+{
+  "rank": 16,
+  "title": "9 Childs Street",
+  "clip_file": "16-9-childs-street-00-27-15.000.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\9 Childs Street 2819974708-697386570-131a35d0-c7a5-4643-a56a-aef754aff04c.mp4",
+  "source_start_seconds": 1635.0,
+  "source_end_seconds": 1665.5,
+  "source_peak_seconds": 1647.0,
+  "source_start_timestamp": "00:27:15",
+  "source_end_timestamp": "00:27:45",
+  "source_peak_timestamp": "00:27:27",
+  "score": 70.37,
+  "reason": "audio: sudden noise candidate, sudden jump +19.2 dB, above local baseline +13.4 dB, near-clipping peak"
+}

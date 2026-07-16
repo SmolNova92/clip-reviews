@@ -1,0 +1,14 @@
+{
+  "rank": 7,
+  "title": "9 Childs Street",
+  "clip_file": "07-9-childs-street-01-17-07.500.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\9 Childs Street 2819974708-697386570-131a35d0-c7a5-4643-a56a-aef754aff04c.mp4",
+  "source_start_seconds": 4627.5,
+  "source_end_seconds": 4678.19,
+  "source_peak_seconds": 4639.5,
+  "source_start_timestamp": "01:17:07",
+  "source_end_timestamp": "01:17:58",
+  "source_peak_timestamp": "01:17:19",
+  "score": 94.06,
+  "reason": "audio: sudden noise candidate, sudden jump +19.0 dB, above local baseline +8.7 dB, near-clipping peak | transcript: fear/surprise phrase (More than luck at what the f**k)"
+}

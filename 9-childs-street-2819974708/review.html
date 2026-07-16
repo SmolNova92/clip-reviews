@@ -1,0 +1,1442 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>9 Childs Street Clip Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --text: #202124;
+      --muted: #666b73;
+      --line: #d9d7d0;
+      --accent: #166a5b;
+      --keep: #0f7b4f;
+      --maybe: #936d13;
+      --reject: #9e2f2f;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.45;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      background: rgba(247, 247, 244, 0.96);
+      border-bottom: 1px solid var(--line);
+      padding: 16px 24px;
+    }
+    .topline {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+    h1 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .source {
+      margin: 4px auto 0;
+      max-width: 1320px;
+      color: var(--muted);
+      font-size: 13px;
+      overflow-wrap: anywhere;
+    }
+    .summary {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 18px 24px 42px;
+    }
+    .clip {
+      display: grid;
+      grid-template-columns: minmax(360px, 1.25fr) minmax(320px, 0.75fr);
+      gap: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+      margin: 0 0 16px;
+    }
+    .videoWrap {
+      background: #111;
+      border-radius: 6px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+    }
+    video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+    .clipHeader {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+    .score {
+      min-width: 58px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    dl {
+      display: grid;
+      gap: 8px;
+      margin: 0 0 14px;
+    }
+    dl div {
+      display: grid;
+      grid-template-columns: 72px minmax(0, 1fr);
+      gap: 8px;
+    }
+    dt {
+      color: var(--muted);
+      font-size: 13px;
+    }
+    dd {
+      margin: 0;
+      overflow-wrap: anywhere;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    button {
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 6px;
+      padding: 9px 10px;
+      font: inherit;
+      cursor: pointer;
+    }
+    button.active[data-status="keep"] {
+      background: var(--keep);
+      color: white;
+      border-color: var(--keep);
+    }
+    button.active[data-status="maybe"] {
+      background: var(--maybe);
+      color: white;
+      border-color: var(--maybe);
+    }
+    button.active[data-status="reject"] {
+      background: var(--reject);
+      color: white;
+      border-color: var(--reject);
+    }
+    label {
+      display: grid;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    textarea {
+      width: 100%;
+      resize: vertical;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 9px;
+      font: inherit;
+      color: var(--text);
+      background: white;
+    }
+    @media (max-width: 860px) {
+      header { position: static; }
+      .topline { align-items: flex-start; flex-direction: column; }
+      .clip { grid-template-columns: 1fr; }
+      main { padding: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topline">
+      <h1>9 Childs Street Clip Review</h1>
+      <div>
+        <div class="summary">
+          <span>40 clips</span>
+          <span id="counts">0 keep / 0 maybe / 0 reject</span>
+        </div>
+        <div class="actions">
+          <button type="button" id="exportCsv">Export CSV</button>
+          <button type="button" id="exportJson">Export JSON</button>
+          <button type="button" id="clearReview">Clear Review</button>
+        </div>
+      </div>
+    </div>
+    <div class="source">Source: D:\Cackle\Raw VODs\9 Childs Street 2819974708-697386570-131a35d0-c7a5-4643-a56a-aef754aff04c.mp4</div>
+  </header>
+  <main>
+    
+      <article class="clip" data-rank="1">
+        <div class="videoWrap">
+          <video src="01-9-childs-street-01-27-14.650.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#01 9 Childs Street</h2>
+            <span class="score">158.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:27:14 - 01:29:50</dd></div>
+            <div><dt>Peak</dt><dd>01:28:53</dd></div>
+            <div><dt>File</dt><dd>01-9-childs-street-01-27-14.650.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +24.9 dB, above local baseline +11.3 dB | chat: chat spike +3 messages, 1 reaction keyword(s), 2 active chatter(s) | transcript: laugh/funny phrase + laugh/funny phrase, vocal reaction word + fear/surprise phrase, strong reaction phrase + fear/surprise phrase, vocal reaction word (Realization that I can&#x27;t change anything. It&#x27;s driving me crazy / Well, the dude&#x27;s dead now. No. No, we did not get a go)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 1">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="2">
+        <div class="videoWrap">
+          <video src="02-9-childs-street-00-44-29.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#02 9 Childs Street</h2>
+            <span class="score">151.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:44:29 - 00:45:20</dd></div>
+            <div><dt>Peak</dt><dd>00:44:41</dd></div>
+            <div><dt>File</dt><dd>02-9-childs-street-00-44-29.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +34.0 dB, near-clipping peak | chat: chat spike +2 messages | transcript: fear/surprise phrase + laugh/funny phrase, clip-worthy phrase (Why did I press exit? / So, you know, I can&#x27;t believe this)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 2">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="3">
+        <div class="videoWrap">
+          <video src="03-9-childs-street-01-31-41.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#03 9 Childs Street</h2>
+            <span class="score">119.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:31:41 - 01:33:05</dd></div>
+            <div><dt>Peak</dt><dd>01:31:53</dd></div>
+            <div><dt>File</dt><dd>03-9-childs-street-01-31-41.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +31.8 dB | chat: chat spike +3 messages, 1 reaction keyword(s), 3 active chatter(s) | transcript: fear/surprise phrase (You got a one k laptop to help with editing on the side)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 3">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="4">
+        <div class="videoWrap">
+          <video src="04-9-childs-street-00-04-45.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#04 9 Childs Street</h2>
+            <span class="score">111.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:04:45 - 00:06:15</dd></div>
+            <div><dt>Peak</dt><dd>00:05:40</dd></div>
+            <div><dt>File</dt><dd>04-9-childs-street-00-04-45.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +25.0 dB | chat: chat spike +3 messages, 3 active chatter(s) | transcript: fear/surprise phrase, short punchy reaction (What was that?)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 4">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="5">
+        <div class="videoWrap">
+          <video src="05-9-childs-street-01-24-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#05 9 Childs Street</h2>
+            <span class="score">106.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:24:15 - 01:25:24</dd></div>
+            <div><dt>Peak</dt><dd>01:24:58</dd></div>
+            <div><dt>File</dt><dd>05-9-childs-street-01-24-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +11.8 dB, above local baseline +14.5 dB | chat: chat spike +2 messages | transcript: laugh/funny phrase (I can&#x27;t fucking say)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 5">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="6">
+        <div class="videoWrap">
+          <video src="06-9-childs-street-00-15-27.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#06 9 Childs Street</h2>
+            <span class="score">105.3</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:15:27 - 00:16:46</dd></div>
+            <div><dt>Peak</dt><dd>00:15:39</dd></div>
+            <div><dt>File</dt><dd>06-9-childs-street-00-15-27.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +15.6 dB, above local baseline +13.6 dB, near-clipping peak | transcript: fear/surprise phrase, vocal reaction word (Saving oh my goodness, I&#x27;m scared)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 6">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="7">
+        <div class="videoWrap">
+          <video src="07-9-childs-street-01-17-07.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#07 9 Childs Street</h2>
+            <span class="score">94.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:17:07 - 01:17:58</dd></div>
+            <div><dt>Peak</dt><dd>01:17:19</dd></div>
+            <div><dt>File</dt><dd>07-9-childs-street-01-17-07.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +19.0 dB, above local baseline +8.7 dB, near-clipping peak | transcript: fear/surprise phrase (More than luck at what the f**k)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 7">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="8">
+        <div class="videoWrap">
+          <video src="08-9-childs-street-00-18-03.660.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#08 9 Childs Street</h2>
+            <span class="score">88.6</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:18:03 - 00:19:07</dd></div>
+            <div><dt>Peak</dt><dd>00:18:49</dd></div>
+            <div><dt>File</dt><dd>08-9-childs-street-00-18-03.660.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +11.6 dB, above local baseline +11.6 dB | transcript: laugh/funny phrase, vocal reaction word (Okay, I can&#x27;t get in there, so I don&#x27;t think I do anything with this no)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 8">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="9">
+        <div class="videoWrap">
+          <video src="09-9-childs-street-01-29-55.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#09 9 Childs Street</h2>
+            <span class="score">84.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:29:55 - 01:30:50</dd></div>
+            <div><dt>Peak</dt><dd>01:30:07</dd></div>
+            <div><dt>File</dt><dd>09-9-childs-street-01-29-55.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +34.9 dB, near-clipping peak | chat: chat spike +1 messages, 1 reaction keyword(s), 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 9">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="10">
+        <div class="videoWrap">
+          <video src="10-9-childs-street-00-33-01.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#10 9 Childs Street</h2>
+            <span class="score">82.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:33:01 - 00:34:08</dd></div>
+            <div><dt>Peak</dt><dd>00:33:13</dd></div>
+            <div><dt>File</dt><dd>10-9-childs-street-00-33-01.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +7.5 dB, above local baseline +11.6 dB, near-clipping peak | transcript: fear/surprise phrase (What was that stat on how?)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 10">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="11">
+        <div class="videoWrap">
+          <video src="11-9-childs-street-00-02-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#11 9 Childs Street</h2>
+            <span class="score">81.9</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:02:15 - 00:03:24</dd></div>
+            <div><dt>Peak</dt><dd>00:03:06</dd></div>
+            <div><dt>File</dt><dd>11-9-childs-street-00-02-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +28.4 dB | chat: chat spike +3 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 11">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="12">
+        <div class="videoWrap">
+          <video src="12-9-childs-street-00-47-05.840.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#12 9 Childs Street</h2>
+            <span class="score">79.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:47:05 - 00:49:36</dd></div>
+            <div><dt>Peak</dt><dd>00:47:20</dd></div>
+            <div><dt>File</dt><dd>12-9-childs-street-00-47-05.840.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +12.8 dB, above local baseline +7.1 dB, near-clipping peak | transcript: strong reaction phrase, vocal reaction word + fear/surprise phrase + laugh/funny phrase (Oh, oh, where the fuck am I? / Okay, small, I&#x27;ll stop it now / We&#x27;re gonna leave now because I&#x27;m scared / Because I can&#x27;)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 12">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="13">
+        <div class="videoWrap">
+          <video src="13-9-childs-street-00-42-24.250.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#13 9 Childs Street</h2>
+            <span class="score">74.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:42:24 - 00:43:34</dd></div>
+            <div><dt>Peak</dt><dd>00:42:36</dd></div>
+            <div><dt>File</dt><dd>13-9-childs-street-00-42-24.250.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase, clip-worthy phrase + fear/surprise phrase (I can&#x27;t believe he came back in for his bloody hat / What is that noise by here?)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 13">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="14">
+        <div class="videoWrap">
+          <video src="14-9-childs-street-00-14-46.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#14 9 Childs Street</h2>
+            <span class="score">70.8</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:14:46 - 00:15:17</dd></div>
+            <div><dt>Peak</dt><dd>00:14:58</dd></div>
+            <div><dt>File</dt><dd>14-9-childs-street-00-14-46.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +22.2 dB, above local baseline +11.9 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 14">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="15">
+        <div class="videoWrap">
+          <video src="15-9-childs-street-01-33-09.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#15 9 Childs Street</h2>
+            <span class="score">70.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:33:09 - 01:33:39</dd></div>
+            <div><dt>Peak</dt><dd>01:33:21</dd></div>
+            <div><dt>File</dt><dd>15-9-childs-street-01-33-09.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +33.3 dB, above local baseline +6.6 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 15">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="16">
+        <div class="videoWrap">
+          <video src="16-9-childs-street-00-27-15.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#16 9 Childs Street</h2>
+            <span class="score">70.4</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:27:15 - 00:27:45</dd></div>
+            <div><dt>Peak</dt><dd>00:27:27</dd></div>
+            <div><dt>File</dt><dd>16-9-childs-street-00-27-15.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +19.2 dB, above local baseline +13.4 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 16">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="17">
+        <div class="videoWrap">
+          <video src="17-9-childs-street-01-04-00.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#17 9 Childs Street</h2>
+            <span class="score">70.2</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:04:00 - 01:05:13</dd></div>
+            <div><dt>Peak</dt><dd>01:04:55</dd></div>
+            <div><dt>File</dt><dd>17-9-childs-street-01-04-00.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, above local baseline +16.3 dB, near-clipping peak | chat: chat spike +2 messages, 2 active chatter(s)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 17">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="18">
+        <div class="videoWrap">
+          <video src="18-9-childs-street-00-21-10.180.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#18 9 Childs Street</h2>
+            <span class="score">68.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:21:10 - 00:22:28</dd></div>
+            <div><dt>Peak</dt><dd>00:21:59</dd></div>
+            <div><dt>File</dt><dd>18-9-childs-street-00-21-10.180.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, strong reaction phrase + laugh/funny phrase, vocal reaction word + fear/surprise phrase, laugh/funny phrase (What the actual fuck you were okay? / To be honest, there may be something in these toilets. Oh, I can&#x27;t open that one /)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 18">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="19">
+        <div class="videoWrap">
+          <video src="19-9-childs-street-00-25-48.340.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#19 9 Childs Street</h2>
+            <span class="score">63.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:25:48 - 00:27:25</dd></div>
+            <div><dt>Peak</dt><dd>00:26:35</dd></div>
+            <div><dt>File</dt><dd>19-9-childs-street-00-25-48.340.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, vocal reaction word + fear/surprise phrase, strong reaction phrase, vocal reaction word + fear/surprise phrase (I don&#x27;t I don&#x27;t know if we have to stay in here anymore, but I don&#x27;t think so. Oh my god / Supposed to lose the basement)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 19">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="20">
+        <div class="videoWrap">
+          <video src="20-9-childs-street-00-14-10.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#20 9 Childs Street</h2>
+            <span class="score">60.7</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:14:10 - 00:14:41</dd></div>
+            <div><dt>Peak</dt><dd>00:14:22</dd></div>
+            <div><dt>File</dt><dd>20-9-childs-street-00-14-10.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +29.7 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 20">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="21">
+        <div class="videoWrap">
+          <video src="21-9-childs-street-00-12-58.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#21 9 Childs Street</h2>
+            <span class="score">57.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:12:58 - 00:13:28</dd></div>
+            <div><dt>Peak</dt><dd>00:13:10</dd></div>
+            <div><dt>File</dt><dd>21-9-childs-street-00-12-58.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +22.2 dB, above local baseline +7.0 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 21">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="22">
+        <div class="videoWrap">
+          <video src="22-9-childs-street-00-19-46.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#22 9 Childs Street</h2>
+            <span class="score">57.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:19:46 - 00:20:17</dd></div>
+            <div><dt>Peak</dt><dd>00:19:58</dd></div>
+            <div><dt>File</dt><dd>22-9-childs-street-00-19-46.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +9.6 dB, above local baseline +15.7 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 22">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="23">
+        <div class="videoWrap">
+          <video src="23-9-childs-street-01-25-50.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#23 9 Childs Street</h2>
+            <span class="score">52.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:25:50 - 01:26:20</dd></div>
+            <div><dt>Peak</dt><dd>01:26:02</dd></div>
+            <div><dt>File</dt><dd>23-9-childs-street-01-25-50.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +13.0 dB, above local baseline +10.4 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 23">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="24">
+        <div class="videoWrap">
+          <video src="24-9-childs-street-00-13-28.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#24 9 Childs Street</h2>
+            <span class="score">52.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:13:28 - 00:13:59</dd></div>
+            <div><dt>Peak</dt><dd>00:13:40</dd></div>
+            <div><dt>File</dt><dd>24-9-childs-street-00-13-28.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +18.8 dB, above local baseline +6.5 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 24">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="25">
+        <div class="videoWrap">
+          <video src="25-9-childs-street-01-26-13.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#25 9 Childs Street</h2>
+            <span class="score">49.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:26:13 - 01:26:44</dd></div>
+            <div><dt>Peak</dt><dd>01:26:25</dd></div>
+            <div><dt>File</dt><dd>25-9-childs-street-01-26-13.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +20.0 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 25">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="26">
+        <div class="videoWrap">
+          <video src="26-9-childs-street-00-52-16.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#26 9 Childs Street</h2>
+            <span class="score">48.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:52:16 - 00:52:47</dd></div>
+            <div><dt>Peak</dt><dd>00:52:28</dd></div>
+            <div><dt>File</dt><dd>26-9-childs-street-00-52-16.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +10.8 dB, above local baseline +10.1 dB, near-clipping peak</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 26">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="27">
+        <div class="videoWrap">
+          <video src="27-9-childs-street-00-17-18.500.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#27 9 Childs Street</h2>
+            <span class="score">46.4</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:17:18 - 00:17:49</dd></div>
+            <div><dt>Peak</dt><dd>00:17:30</dd></div>
+            <div><dt>File</dt><dd>27-9-childs-street-00-17-18.500.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: unusual loudness, sudden jump +10.6 dB, above local baseline +10.2 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 27">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="28">
+        <div class="videoWrap">
+          <video src="28-9-childs-street-00-19-06.000.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#28 9 Childs Street</h2>
+            <span class="score">46.1</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:19:06 - 00:19:36</dd></div>
+            <div><dt>Peak</dt><dd>00:19:18</dd></div>
+            <div><dt>File</dt><dd>28-9-childs-street-00-19-06.000.mp4</dd></div>
+            <div><dt>Reason</dt><dd>audio: sudden noise candidate, sudden jump +14.1 dB, above local baseline +7.9 dB</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 28">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="29">
+        <div class="videoWrap">
+          <video src="29-9-childs-street-00-28-24.610.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#29 9 Childs Street</h2>
+            <span class="score">41.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:28:24 - 00:28:59</dd></div>
+            <div><dt>Peak</dt><dd>00:28:36</dd></div>
+            <div><dt>File</dt><dd>29-9-childs-street-00-28-24.610.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, vocal reaction word (No, I don&#x27;t want to play stop it)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 29">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="30">
+        <div class="videoWrap">
+          <video src="30-9-childs-street-00-58-21.930.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#30 9 Childs Street</h2>
+            <span class="score">41.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:58:21 - 00:59:35</dd></div>
+            <div><dt>Peak</dt><dd>00:58:33</dd></div>
+            <div><dt>File</dt><dd>30-9-childs-street-00-58-21.930.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, vocal reaction word + laugh/funny phrase (Oh my god, this game&#x27;s like literally an hour / I can&#x27;t bloody wait)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 30">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="31">
+        <div class="videoWrap">
+          <video src="31-9-childs-street-01-08-47.290.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#31 9 Childs Street</h2>
+            <span class="score">41.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:08:47 - 01:09:18</dd></div>
+            <div><dt>Peak</dt><dd>01:08:59</dd></div>
+            <div><dt>File</dt><dd>31-9-childs-street-01-08-47.290.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, vocal reaction word (Oh my god)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 31">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="32">
+        <div class="videoWrap">
+          <video src="32-9-childs-street-01-18-31.180.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#32 9 Childs Street</h2>
+            <span class="score">41.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:18:31 - 01:19:03</dd></div>
+            <div><dt>Peak</dt><dd>01:18:43</dd></div>
+            <div><dt>File</dt><dd>32-9-childs-street-01-18-31.180.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase, vocal reaction word (No, let&#x27;s just say like I&#x27;ll help you)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 32">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="33">
+        <div class="videoWrap">
+          <video src="33-9-childs-street-00-10-45.030.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#33 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:10:45 - 00:11:17</dd></div>
+            <div><dt>Peak</dt><dd>00:10:57</dd></div>
+            <div><dt>File</dt><dd>33-9-childs-street-00-10-45.030.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase (This looks like there&#x27;s a girl behind him scared)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 33">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="34">
+        <div class="videoWrap">
+          <video src="34-9-childs-street-00-23-32.850.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#34 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:23:32 - 00:24:16</dd></div>
+            <div><dt>Peak</dt><dd>00:23:52</dd></div>
+            <div><dt>File</dt><dd>34-9-childs-street-00-23-32.850.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase + fear/surprise phrase (I can&#x27;t go it&#x27;s got be in here. I&#x27;m gonna die / Stop it. There must be a problem with the electricity. It&#x27;s time to go)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 34">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="35">
+        <div class="videoWrap">
+          <video src="35-9-childs-street-00-29-13.080.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#35 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:29:13 - 00:30:44</dd></div>
+            <div><dt>Peak</dt><dd>00:30:01</dd></div>
+            <div><dt>File</dt><dd>35-9-childs-street-00-29-13.080.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase + fear/surprise phrase (I can&#x27;t do a puzzle right now. I&#x27;m stressed / Good, let&#x27;s go upstairs. I hate this little mannequin kid. He&#x27;s awful. I r)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 35">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="36">
+        <div class="videoWrap">
+          <video src="36-9-childs-street-00-35-02.620.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#36 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:35:02 - 00:35:45</dd></div>
+            <div><dt>Peak</dt><dd>00:35:23</dd></div>
+            <div><dt>File</dt><dd>36-9-childs-street-00-35-02.620.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase + fear/surprise phrase (Now I can&#x27;t eat my hair started to fall out and the skin began to rot / Blew my voice on my screen with help. Okay. I re)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 36">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="37">
+        <div class="videoWrap">
+          <video src="37-9-childs-street-00-56-07.280.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#37 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:56:07 - 00:56:45</dd></div>
+            <div><dt>Peak</dt><dd>00:56:24</dd></div>
+            <div><dt>File</dt><dd>37-9-childs-street-00-56-07.280.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase + fear/surprise phrase (I can&#x27;t / Help me out)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 37">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="38">
+        <div class="videoWrap">
+          <video src="38-9-childs-street-01-12-00.720.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#38 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:12:00 - 01:12:31</dd></div>
+            <div><dt>Peak</dt><dd>01:12:12</dd></div>
+            <div><dt>File</dt><dd>38-9-childs-street-01-12-00.720.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase (Scared myself)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 38">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="39">
+        <div class="videoWrap">
+          <video src="39-9-childs-street-01-13-58.010.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#39 9 Childs Street</h2>
+            <span class="score">36.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>01:13:58 - 01:15:00</dd></div>
+            <div><dt>Peak</dt><dd>01:14:10</dd></div>
+            <div><dt>File</dt><dd>39-9-childs-street-01-13-58.010.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: fear/surprise phrase + laugh/funny phrase (Why did we both think it said fireplace? / I can&#x27;t reach it. I have to get the chair)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 39">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+
+      <article class="clip" data-rank="40">
+        <div class="videoWrap">
+          <video src="40-9-childs-street-00-04-20.130.mp4" controls preload="metadata"></video>
+        </div>
+        <div class="details">
+          <div class="clipHeader">
+            <h2>#40 9 Childs Street</h2>
+            <span class="score">32.0</span>
+          </div>
+          <dl>
+            <div><dt>Source</dt><dd>00:04:20 - 00:04:53</dd></div>
+            <div><dt>Peak</dt><dd>00:04:32</dd></div>
+            <div><dt>File</dt><dd>40-9-childs-street-00-04-20.130.mp4</dd></div>
+            <div><dt>Reason</dt><dd>transcript: laugh/funny phrase (Pending I&#x27;ve also got some other things come in just I can&#x27;t wait for it to come)</dd></div>
+          </dl>
+          <div class="controls" role="group" aria-label="Review status for clip 40">
+            <button type="button" data-status="keep">Keep</button>
+            <button type="button" data-status="maybe">Maybe</button>
+            <button type="button" data-status="reject">Reject</button>
+          </div>
+          <label>
+            Notes
+            <textarea rows="4" placeholder="Setup needed, ending too early, good laugh, needs subtitles..."></textarea>
+          </label>
+        </div>
+      </article>
+    
+  </main>
+  <script>
+    const stateKey = "clip-review:C:\\Users\\Phili\\Documents\\Codex\\2026-06-24\\o\\outputs\\twitch-clips-auto\\9-childs-street-2819974708\\review.html";
+    const state = JSON.parse(localStorage.getItem(stateKey) || "{}");
+    const clips = [{"rank": 1, "clip_file": "01-9-childs-street-01-27-14.650.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:27:14", "end_timestamp": "01:29:50", "peak_timestamp": "01:28:53", "score": 158.7, "reason": "audio: sudden noise candidate, sudden jump +24.9 dB, above local baseline +11.3 dB | chat: chat spike +3 messages, 1 reaction keyword(s), 2 active chatter(s) | transcript: laugh/funny phrase + laugh/funny phrase, vocal reaction word + fear/surprise phrase, strong reaction phrase + fear/surprise phrase, vocal reaction word (Realization that I can't change anything. It's driving me crazy / Well, the dude's dead now. No. No, we did not get a go)", "source_marker_json": "01-9-childs-street-01-27-14.650.source-marker.json"}, {"rank": 2, "clip_file": "02-9-childs-street-00-44-29.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:44:29", "end_timestamp": "00:45:20", "peak_timestamp": "00:44:41", "score": 151.06, "reason": "audio: sudden noise candidate, sudden jump +34.0 dB, near-clipping peak | chat: chat spike +2 messages | transcript: fear/surprise phrase + laugh/funny phrase, clip-worthy phrase (Why did I press exit? / So, you know, I can't believe this)", "source_marker_json": "02-9-childs-street-00-44-29.500.source-marker.json"}, {"rank": 3, "clip_file": "03-9-childs-street-01-31-41.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:31:41", "end_timestamp": "01:33:05", "peak_timestamp": "01:31:53", "score": 119.69, "reason": "audio: sudden noise candidate, sudden jump +31.8 dB | chat: chat spike +3 messages, 1 reaction keyword(s), 3 active chatter(s) | transcript: fear/surprise phrase (You got a one k laptop to help with editing on the side)", "source_marker_json": "03-9-childs-street-01-31-41.500.source-marker.json"}, {"rank": 4, "clip_file": "04-9-childs-street-00-04-45.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:04:45", "end_timestamp": "00:06:15", "peak_timestamp": "00:05:40", "score": 111.84, "reason": "audio: sudden noise candidate, sudden jump +25.0 dB | chat: chat spike +3 messages, 3 active chatter(s) | transcript: fear/surprise phrase, short punchy reaction (What was that?)", "source_marker_json": "04-9-childs-street-00-04-45.000.source-marker.json"}, {"rank": 5, "clip_file": "05-9-childs-street-01-24-15.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:24:15", "end_timestamp": "01:25:24", "peak_timestamp": "01:24:58", "score": 106.19, "reason": "audio: unusual loudness, sudden jump +11.8 dB, above local baseline +14.5 dB | chat: chat spike +2 messages | transcript: laugh/funny phrase (I can't fucking say)", "source_marker_json": "05-9-childs-street-01-24-15.000.source-marker.json"}, {"rank": 6, "clip_file": "06-9-childs-street-00-15-27.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:15:27", "end_timestamp": "00:16:46", "peak_timestamp": "00:15:39", "score": 105.33, "reason": "audio: sudden noise candidate, sudden jump +15.6 dB, above local baseline +13.6 dB, near-clipping peak | transcript: fear/surprise phrase, vocal reaction word (Saving oh my goodness, I'm scared)", "source_marker_json": "06-9-childs-street-00-15-27.500.source-marker.json"}, {"rank": 7, "clip_file": "07-9-childs-street-01-17-07.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:17:07", "end_timestamp": "01:17:58", "peak_timestamp": "01:17:19", "score": 94.06, "reason": "audio: sudden noise candidate, sudden jump +19.0 dB, above local baseline +8.7 dB, near-clipping peak | transcript: fear/surprise phrase (More than luck at what the f**k)", "source_marker_json": "07-9-childs-street-01-17-07.500.source-marker.json"}, {"rank": 8, "clip_file": "08-9-childs-street-00-18-03.660.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:18:03", "end_timestamp": "00:19:07", "peak_timestamp": "00:18:49", "score": 88.59, "reason": "audio: unusual loudness, sudden jump +11.6 dB, above local baseline +11.6 dB | transcript: laugh/funny phrase, vocal reaction word (Okay, I can't get in there, so I don't think I do anything with this no)", "source_marker_json": "08-9-childs-street-00-18-03.660.source-marker.json"}, {"rank": 9, "clip_file": "09-9-childs-street-01-29-55.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:29:55", "end_timestamp": "01:30:50", "peak_timestamp": "01:30:07", "score": 84.18, "reason": "audio: sudden noise candidate, sudden jump +34.9 dB, near-clipping peak | chat: chat spike +1 messages, 1 reaction keyword(s), 2 active chatter(s)", "source_marker_json": "09-9-childs-street-01-29-55.500.source-marker.json"}, {"rank": 10, "clip_file": "10-9-childs-street-00-33-01.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:33:01", "end_timestamp": "00:34:08", "peak_timestamp": "00:33:13", "score": 82.21, "reason": "audio: unusual loudness, sudden jump +7.5 dB, above local baseline +11.6 dB, near-clipping peak | transcript: fear/surprise phrase (What was that stat on how?)", "source_marker_json": "10-9-childs-street-00-33-01.000.source-marker.json"}, {"rank": 11, "clip_file": "11-9-childs-street-00-02-15.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:02:15", "end_timestamp": "00:03:24", "peak_timestamp": "00:03:06", "score": 81.88, "reason": "audio: sudden noise candidate, sudden jump +28.4 dB | chat: chat spike +3 messages, 2 active chatter(s)", "source_marker_json": "11-9-childs-street-00-02-15.000.source-marker.json"}, {"rank": 12, "clip_file": "12-9-childs-street-00-47-05.840.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:47:05", "end_timestamp": "00:49:36", "peak_timestamp": "00:47:20", "score": 79.85, "reason": "audio: sudden noise candidate, sudden jump +12.8 dB, above local baseline +7.1 dB, near-clipping peak | transcript: strong reaction phrase, vocal reaction word + fear/surprise phrase + laugh/funny phrase (Oh, oh, where the fuck am I? / Okay, small, I'll stop it now / We're gonna leave now because I'm scared / Because I can')", "source_marker_json": "12-9-childs-street-00-47-05.840.source-marker.json"}, {"rank": 13, "clip_file": "13-9-childs-street-00-42-24.250.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:42:24", "end_timestamp": "00:43:34", "peak_timestamp": "00:42:36", "score": 74.0, "reason": "transcript: laugh/funny phrase, clip-worthy phrase + fear/surprise phrase (I can't believe he came back in for his bloody hat / What is that noise by here?)", "source_marker_json": "13-9-childs-street-00-42-24.250.source-marker.json"}, {"rank": 14, "clip_file": "14-9-childs-street-00-14-46.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:14:46", "end_timestamp": "00:15:17", "peak_timestamp": "00:14:58", "score": 70.76, "reason": "audio: sudden noise candidate, sudden jump +22.2 dB, above local baseline +11.9 dB", "source_marker_json": "14-9-childs-street-00-14-46.500.source-marker.json"}, {"rank": 15, "clip_file": "15-9-childs-street-01-33-09.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:33:09", "end_timestamp": "01:33:39", "peak_timestamp": "01:33:21", "score": 70.69, "reason": "audio: sudden noise candidate, sudden jump +33.3 dB, above local baseline +6.6 dB", "source_marker_json": "15-9-childs-street-01-33-09.000.source-marker.json"}, {"rank": 16, "clip_file": "16-9-childs-street-00-27-15.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:27:15", "end_timestamp": "00:27:45", "peak_timestamp": "00:27:27", "score": 70.37, "reason": "audio: sudden noise candidate, sudden jump +19.2 dB, above local baseline +13.4 dB, near-clipping peak", "source_marker_json": "16-9-childs-street-00-27-15.000.source-marker.json"}, {"rank": 17, "clip_file": "17-9-childs-street-01-04-00.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:04:00", "end_timestamp": "01:05:13", "peak_timestamp": "01:04:55", "score": 70.18, "reason": "audio: unusual loudness, above local baseline +16.3 dB, near-clipping peak | chat: chat spike +2 messages, 2 active chatter(s)", "source_marker_json": "17-9-childs-street-01-04-00.000.source-marker.json"}, {"rank": 18, "clip_file": "18-9-childs-street-00-21-10.180.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:21:10", "end_timestamp": "00:22:28", "peak_timestamp": "00:21:59", "score": 68.0, "reason": "transcript: fear/surprise phrase, strong reaction phrase + laugh/funny phrase, vocal reaction word + fear/surprise phrase, laugh/funny phrase (What the actual fuck you were okay? / To be honest, there may be something in these toilets. Oh, I can't open that one /)", "source_marker_json": "18-9-childs-street-00-21-10.180.source-marker.json"}, {"rank": 19, "clip_file": "19-9-childs-street-00-25-48.340.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:25:48", "end_timestamp": "00:27:25", "peak_timestamp": "00:26:35", "score": 63.0, "reason": "transcript: fear/surprise phrase, vocal reaction word + fear/surprise phrase, strong reaction phrase, vocal reaction word + fear/surprise phrase (I don't I don't know if we have to stay in here anymore, but I don't think so. Oh my god / Supposed to lose the basement)", "source_marker_json": "19-9-childs-street-00-25-48.340.source-marker.json"}, {"rank": 20, "clip_file": "20-9-childs-street-00-14-10.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:14:10", "end_timestamp": "00:14:41", "peak_timestamp": "00:14:22", "score": 60.72, "reason": "audio: sudden noise candidate, sudden jump +29.7 dB, near-clipping peak", "source_marker_json": "20-9-childs-street-00-14-10.500.source-marker.json"}, {"rank": 21, "clip_file": "21-9-childs-street-00-12-58.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:12:58", "end_timestamp": "00:13:28", "peak_timestamp": "00:13:10", "score": 57.15, "reason": "audio: sudden noise candidate, sudden jump +22.2 dB, above local baseline +7.0 dB", "source_marker_json": "21-9-childs-street-00-12-58.000.source-marker.json"}, {"rank": 22, "clip_file": "22-9-childs-street-00-19-46.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:19:46", "end_timestamp": "00:20:17", "peak_timestamp": "00:19:58", "score": 56.99, "reason": "audio: unusual loudness, sudden jump +9.6 dB, above local baseline +15.7 dB", "source_marker_json": "22-9-childs-street-00-19-46.500.source-marker.json"}, {"rank": 23, "clip_file": "23-9-childs-street-01-25-50.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:25:50", "end_timestamp": "01:26:20", "peak_timestamp": "01:26:02", "score": 52.1, "reason": "audio: sudden noise candidate, sudden jump +13.0 dB, above local baseline +10.4 dB, near-clipping peak", "source_marker_json": "23-9-childs-street-01-25-50.000.source-marker.json"}, {"rank": 24, "clip_file": "24-9-childs-street-00-13-28.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:13:28", "end_timestamp": "00:13:59", "peak_timestamp": "00:13:40", "score": 52.01, "reason": "audio: sudden noise candidate, sudden jump +18.8 dB, above local baseline +6.5 dB, near-clipping peak", "source_marker_json": "24-9-childs-street-00-13-28.500.source-marker.json"}, {"rank": 25, "clip_file": "25-9-childs-street-01-26-13.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:26:13", "end_timestamp": "01:26:44", "peak_timestamp": "01:26:25", "score": 49.06, "reason": "audio: sudden noise candidate, sudden jump +20.0 dB", "source_marker_json": "25-9-childs-street-01-26-13.500.source-marker.json"}, {"rank": 26, "clip_file": "26-9-childs-street-00-52-16.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:52:16", "end_timestamp": "00:52:47", "peak_timestamp": "00:52:28", "score": 48.08, "reason": "audio: unusual loudness, sudden jump +10.8 dB, above local baseline +10.1 dB, near-clipping peak", "source_marker_json": "26-9-childs-street-00-52-16.500.source-marker.json"}, {"rank": 27, "clip_file": "27-9-childs-street-00-17-18.500.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:17:18", "end_timestamp": "00:17:49", "peak_timestamp": "00:17:30", "score": 46.4, "reason": "audio: unusual loudness, sudden jump +10.6 dB, above local baseline +10.2 dB", "source_marker_json": "27-9-childs-street-00-17-18.500.source-marker.json"}, {"rank": 28, "clip_file": "28-9-childs-street-00-19-06.000.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:19:06", "end_timestamp": "00:19:36", "peak_timestamp": "00:19:18", "score": 46.14, "reason": "audio: sudden noise candidate, sudden jump +14.1 dB, above local baseline +7.9 dB", "source_marker_json": "28-9-childs-street-00-19-06.000.source-marker.json"}, {"rank": 29, "clip_file": "29-9-childs-street-00-28-24.610.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:28:24", "end_timestamp": "00:28:59", "peak_timestamp": "00:28:36", "score": 41.0, "reason": "transcript: fear/surprise phrase, vocal reaction word (No, I don't want to play stop it)", "source_marker_json": "29-9-childs-street-00-28-24.610.source-marker.json"}, {"rank": 30, "clip_file": "30-9-childs-street-00-58-21.930.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:58:21", "end_timestamp": "00:59:35", "peak_timestamp": "00:58:33", "score": 41.0, "reason": "transcript: fear/surprise phrase, vocal reaction word + laugh/funny phrase (Oh my god, this game's like literally an hour / I can't bloody wait)", "source_marker_json": "30-9-childs-street-00-58-21.930.source-marker.json"}, {"rank": 31, "clip_file": "31-9-childs-street-01-08-47.290.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:08:47", "end_timestamp": "01:09:18", "peak_timestamp": "01:08:59", "score": 41.0, "reason": "transcript: fear/surprise phrase, vocal reaction word (Oh my god)", "source_marker_json": "31-9-childs-street-01-08-47.290.source-marker.json"}, {"rank": 32, "clip_file": "32-9-childs-street-01-18-31.180.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:18:31", "end_timestamp": "01:19:03", "peak_timestamp": "01:18:43", "score": 41.0, "reason": "transcript: fear/surprise phrase, vocal reaction word (No, let's just say like I'll help you)", "source_marker_json": "32-9-childs-street-01-18-31.180.source-marker.json"}, {"rank": 33, "clip_file": "33-9-childs-street-00-10-45.030.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:10:45", "end_timestamp": "00:11:17", "peak_timestamp": "00:10:57", "score": 36.0, "reason": "transcript: fear/surprise phrase (This looks like there's a girl behind him scared)", "source_marker_json": "33-9-childs-street-00-10-45.030.source-marker.json"}, {"rank": 34, "clip_file": "34-9-childs-street-00-23-32.850.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:23:32", "end_timestamp": "00:24:16", "peak_timestamp": "00:23:52", "score": 36.0, "reason": "transcript: laugh/funny phrase + fear/surprise phrase (I can't go it's got be in here. I'm gonna die / Stop it. There must be a problem with the electricity. It's time to go)", "source_marker_json": "34-9-childs-street-00-23-32.850.source-marker.json"}, {"rank": 35, "clip_file": "35-9-childs-street-00-29-13.080.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:29:13", "end_timestamp": "00:30:44", "peak_timestamp": "00:30:01", "score": 36.0, "reason": "transcript: laugh/funny phrase + fear/surprise phrase (I can't do a puzzle right now. I'm stressed / Good, let's go upstairs. I hate this little mannequin kid. He's awful. I r)", "source_marker_json": "35-9-childs-street-00-29-13.080.source-marker.json"}, {"rank": 36, "clip_file": "36-9-childs-street-00-35-02.620.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:35:02", "end_timestamp": "00:35:45", "peak_timestamp": "00:35:23", "score": 36.0, "reason": "transcript: laugh/funny phrase + fear/surprise phrase (Now I can't eat my hair started to fall out and the skin began to rot / Blew my voice on my screen with help. Okay. I re)", "source_marker_json": "36-9-childs-street-00-35-02.620.source-marker.json"}, {"rank": 37, "clip_file": "37-9-childs-street-00-56-07.280.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:56:07", "end_timestamp": "00:56:45", "peak_timestamp": "00:56:24", "score": 36.0, "reason": "transcript: laugh/funny phrase + fear/surprise phrase (I can't / Help me out)", "source_marker_json": "37-9-childs-street-00-56-07.280.source-marker.json"}, {"rank": 38, "clip_file": "38-9-childs-street-01-12-00.720.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:12:00", "end_timestamp": "01:12:31", "peak_timestamp": "01:12:12", "score": 36.0, "reason": "transcript: fear/surprise phrase (Scared myself)", "source_marker_json": "38-9-childs-street-01-12-00.720.source-marker.json"}, {"rank": 39, "clip_file": "39-9-childs-street-01-13-58.010.mp4", "vod_title": "9 Childs Street", "source_timestamp": "01:13:58", "end_timestamp": "01:15:00", "peak_timestamp": "01:14:10", "score": 36.0, "reason": "transcript: fear/surprise phrase + laugh/funny phrase (Why did we both think it said fireplace? / I can't reach it. I have to get the chair)", "source_marker_json": "39-9-childs-street-01-13-58.010.source-marker.json"}, {"rank": 40, "clip_file": "40-9-childs-street-00-04-20.130.mp4", "vod_title": "9 Childs Street", "source_timestamp": "00:04:20", "end_timestamp": "00:04:53", "peak_timestamp": "00:04:32", "score": 32.0, "reason": "transcript: laugh/funny phrase (Pending I've also got some other things come in just I can't wait for it to come)", "source_marker_json": "40-9-childs-street-00-04-20.130.source-marker.json"}];
+    const exportBaseName = "9-childs-street-review-decisions";
+
+    function save() {
+      localStorage.setItem(stateKey, JSON.stringify(state));
+      updateCounts();
+    }
+
+    function updateCounts() {
+      const counts = { keep: 0, maybe: 0, reject: 0 };
+      Object.values(state).forEach(item => {
+        if (item.status && counts[item.status] !== undefined) counts[item.status] += 1;
+      });
+      document.getElementById("counts").textContent =
+        `${counts.keep} keep / ${counts.maybe} maybe / ${counts.reject} reject`;
+    }
+
+    function rowsForExport() {
+      return clips.map(clip => {
+        const item = state[String(clip.rank)] || {};
+        return {
+          ...clip,
+          status: item.status || "",
+          notes: item.notes || ""
+        };
+      });
+    }
+
+    function downloadBlob(filename, mimeType, content) {
+      const blob = new Blob([content], { type: mimeType });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function csvEscape(value) {
+      const text = String(value ?? "");
+      if (/[",
+]/.test(text)) return `"${text.replaceAll('"', '""')}"`;
+      return text;
+    }
+
+    function exportCsv() {
+      const rows = rowsForExport();
+      const headers = [
+        "rank", "clip_file", "vod_title", "source_timestamp", "end_timestamp",
+        "peak_timestamp", "score", "reason", "source_marker_json", "status", "notes"
+      ];
+      const lines = [headers.join(",")];
+      rows.forEach(row => {
+        lines.push(headers.map(header => csvEscape(row[header])).join(","));
+      });
+      downloadBlob(`${exportBaseName}.csv`, "text/csv;charset=utf-8", lines.join("\n"));
+    }
+
+    function exportJson() {
+      const payload = {
+        exported_at: new Date().toISOString(),
+        source: "D:\\Cackle\\Raw VODs\\9 Childs Street 2819974708-697386570-131a35d0-c7a5-4643-a56a-aef754aff04c.mp4",
+        clips: rowsForExport()
+      };
+      downloadBlob(`${exportBaseName}.json`, "application/json;charset=utf-8", JSON.stringify(payload, null, 2));
+    }
+
+    document.querySelectorAll(".clip").forEach(card => {
+      const rank = card.dataset.rank;
+      const item = state[rank] || {};
+      const textarea = card.querySelector("textarea");
+      textarea.value = item.notes || "";
+
+      if (item.status) {
+        const active = card.querySelector(`[data-status="${item.status}"]`);
+        if (active) active.classList.add("active");
+      }
+
+      card.querySelectorAll("button[data-status]").forEach(button => {
+        button.addEventListener("click", () => {
+          card.querySelectorAll("button[data-status]").forEach(other => other.classList.remove("active"));
+          button.classList.add("active");
+          state[rank] = state[rank] || {};
+          state[rank].status = button.dataset.status;
+          save();
+        });
+      });
+
+      textarea.addEventListener("input", () => {
+        state[rank] = state[rank] || {};
+        state[rank].notes = textarea.value;
+        save();
+      });
+    });
+
+    document.getElementById("exportCsv").addEventListener("click", exportCsv);
+    document.getElementById("exportJson").addEventListener("click", exportJson);
+    document.getElementById("clearReview").addEventListener("click", () => {
+      if (!confirm("Clear all review statuses and notes on this page?")) return;
+      Object.keys(state).forEach(key => delete state[key]);
+      localStorage.removeItem(stateKey);
+      document.querySelectorAll("button[data-status]").forEach(button => button.classList.remove("active"));
+      document.querySelectorAll("textarea").forEach(textarea => textarea.value = "");
+      updateCounts();
+    });
+
+    updateCounts();
+  </script>
+</body>
+</html>

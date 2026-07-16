@@ -1,0 +1,14 @@
+{
+  "rank": 8,
+  "title": "9 Childs Street",
+  "clip_file": "08-9-childs-street-00-18-03.660.mp4",
+  "source_path": "D:\\Cackle\\Raw VODs\\9 Childs Street 2819974708-697386570-131a35d0-c7a5-4643-a56a-aef754aff04c.mp4",
+  "source_start_seconds": 1083.66,
+  "source_end_seconds": 1147.5,
+  "source_peak_seconds": 1129.0,
+  "source_start_timestamp": "00:18:03",
+  "source_end_timestamp": "00:19:07",
+  "source_peak_timestamp": "00:18:49",
+  "score": 88.59,
+  "reason": "audio: unusual loudness, sudden jump +11.6 dB, above local baseline +11.6 dB | transcript: laugh/funny phrase, vocal reaction word (Okay, I can't get in there, so I don't think I do anything with this no)"
+}
